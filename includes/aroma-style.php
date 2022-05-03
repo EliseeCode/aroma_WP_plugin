@@ -6,6 +6,11 @@ function wppluggin_admin_style(){
     [],
     time()
     );
+    wp_enqueue_style('bulma',
+    AROMA_URL.'admin/css/bulma.min.css',
+    [],
+    time()
+    );
 }
 add_action('admin_enqueue_scripts','wppluggin_admin_style');
 
@@ -15,5 +20,11 @@ function wppluggin_public_style(){
     [],
     time()
     );
+    wp_enqueue_style('bulma',
+    AROMA_URL.'public/css/bulma.min.css',
+    [],
+    time()
+    );
+    
 }
 add_action('wp_enqueue_scripts','wppluggin_public_style');

@@ -6,3 +6,9 @@ add_action( 'rest_api_init', function () {
     'callback' => 'getBottle',
   ) );
 } );
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'aroma/v1', '/pref', array(
+    'methods' => 'POST',
+    'callback' => 'setPref',
+  ) );
+} );
