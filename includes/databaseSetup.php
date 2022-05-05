@@ -1,6 +1,6 @@
 <?php
 global $_db_version;
-$aroma_db_version = '1.1';
+$aroma_db_version = '1.2';
 
 function tables_install() {
 	global $wpdb;
@@ -31,6 +31,7 @@ function tables_install() {
 		time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 		name tinytext NOT NULL,
 		surname tinytext NOT NULL,
+		comment varchar(1000) DEFAULT '',
 		creator_id mediumint(9),
 		PRIMARY KEY  (id)
 	) $charset_collate;";
@@ -47,7 +48,7 @@ function tables_install() {
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
 		time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 		bottle_id mediumint(9) NOT NULL,
-		tag_id mediumint(9) NOT NULL
+		tag_id mediumint(9) NOT NULL,
 		creator_id mediumint(9),
 		PRIMARY KEY  (id)
 	) $charset_collate;";
@@ -108,7 +109,6 @@ function tables_install() {
 
 	//TABLE ACCOUNTS
 	$table_name = $wpdb->prefix . 'aroma_test_bottle_preference';
-
 	$sql = "CREATE TABLE $table_name (
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
 		time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
@@ -128,17 +128,99 @@ function tables_install() {
 
 function tables_install_data() {
 	global $wpdb;
+
+	//BOTTLES
+	$table_name = $wpdb->prefix . 'aroma_bottles';
+	$wpdb->query("TRUNCATE TABLE $table_name");
+	$handle = fopen(AROMA_PATH.'DBTable_init/Bottles Aroma - bottles.csv', "r");
+        $c = 0;
+        while(($row = fgetcsv($handle, 500, ",")) !== false){
+          $id = $row[0];
+          $name = $row[1];
+          $color="#533d75";
+		  $user_id=get_current_user_id();
+          $data = array(
+            'id' => $id,
+            'name' => $name,
+            'color' => $color,
+			'time' => current_time( 'mysql' ),
+			'creator_id'=> $user_id
+          );
+          $wpdb->replace( $table_name , $data );
+        }
+
+	//TAGS
+	$table_name = $wpdb->prefix . 'aroma_tags';
+	$wpdb->query("TRUNCATE TABLE $table_name");
+	$handle = fopen(AROMA_PATH.'DBTable_init/Bottles Aroma - tags.csv', "r");
+        $c = 0;
+        while(($row = fgetcsv($handle, 500, ",")) !== false){
+          $id = $row[0];
+          $name = $row[1];
+		  $user_id=get_current_user_id();
+          $data = array(
+            'id' => $id,
+            'name' => $name,
+			'time' => current_time( 'mysql' ),
+			'creator_id'=> $user_id
+          );
+          $wpdb->replace( $table_name , $data );
+        }
+		
+	//GROUPS
+	$table_name = $wpdb->prefix . 'aroma_groups';
+	$wpdb->query("TRUNCATE TABLE $table_name");
+	$handle = fopen(AROMA_PATH.'DBTable_init/Bottles Aroma - groups.csv', "r");
+        $c = 0;
+        while(($row = fgetcsv($handle, 500, ",")) !== false){
+          $id = $row[0];
+          $name = $row[1];
+		  $user_id=get_current_user_id();
+          $data = array(
+            'id' => $id,
+            'name' => $name,
+			'time' => current_time( 'mysql' ),
+			'creator_id'=> $user_id
+          );
+          $wpdb->replace( $table_name , $data );
+        }
+		
+	//GROUP_TAG
+	$table_name = $wpdb->prefix . 'aroma_group_tag';
+	$wpdb->query("TRUNCATE TABLE $table_name");
+	$handle = fopen(AROMA_PATH.'DBTable_init/Bottles Aroma - group_tag.csv', "r");
+        $c = 0;
+        while(($row = fgetcsv($handle, 500, ",")) !== false){
+          $group_id = $row[1];
+          $tag_id = $row[0];
+		  $user_id=get_current_user_id();
+          $data = array(
+            'group_id' => $group_id,
+            'tag_id' => $tag_id,
+			'time' => current_time( 'mysql' ),
+			'creator_id'=> $user_id
+          );
+          $wpdb->replace( $table_name , $data );
+        }
+		
+	//BOTTLE_TAG
+	$table_name = $wpdb->prefix . 'aroma_bottle_tag';
+	$wpdb->query("TRUNCATE TABLE $table_name");
+	$handle = fopen(AROMA_PATH.'DBTable_init/Bottles Aroma - bottle_tag.csv', "r");
+        $c = 0;
+        while(($row = fgetcsv($handle, 500, ",")) !== false){
+          $bottle_id = $row[0];
+          $tag_id = $row[1];
+		  $user_id=get_current_user_id();
+          $data = array(
+            'bottle_id' => $bottle_id,
+            'tag_id' => $tag_id,
+			'time' => current_time( 'mysql' ),
+			'creator_id'=> $user_id
+          );
+          $wpdb->replace( $table_name , $data );
+        }	
 	
-	$welcome_name = 'Lavender';
-	
-	$table_name = $wpdb->prefix . 'bottles';
-	
-	$wpdb->insert( 
-		$table_name, 
-		array( 
-			'time' => current_time( 'mysql' ), 
-			'name' => $welcome_name, 
-		) 
-	);
 }
+
 

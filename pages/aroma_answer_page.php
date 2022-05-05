@@ -2,6 +2,8 @@
 /**
  * Template Name: Clean Page
  * This template will only display the content you entered in the page editor
+ * This page has to be created in the WP admin dashboard with the correct slug : aroma-answer
+ * And the redirection is made in wp_page_creation
  */
 ?>
 <!DOCTYPE html>
@@ -22,6 +24,7 @@
 global $wpdb;
 $pref_table_name = $wpdb->prefix . 'aroma_test_bottle_preference';
 $bottle_table_name = $wpdb->prefix . 'aroma_bottles';
+$test_table = $wpdb->prefix . 'aroma_tests';
 $page_uri="./";
 $user_id=get_current_user_id();
 if(isset($_GET["test_id"])){
@@ -31,6 +34,16 @@ else{
   echo "pas de test_id ;(";
   return;
 }
+//Check if user is allowed to see the test
+    $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
+    if ($checkIfExists == NULL) {
+        return "error";
+}
+//GET test
+$tests = $wpdb->get_results("SELECT *
+    FROM $test_table 
+    WHERE id=$test_id");
+  
 //GET Bottles
   $bottles = $wpdb->get_results("SELECT $bottle_table_name.id,
     $bottle_table_name.name,
@@ -45,10 +58,42 @@ else{
 ?>
 
 <div class="wrap container">
+
+  <div class="level" style="width:500px;">
+    <a class="level-item" href="/index.php/aroma-tests">
+    <div class="icon">
+      <span class="fas fa-arrow-left"></span>
+    </div>  
+  </a>
+    <div class="level-item">
+      <div>
+      <?php foreach ($tests as $test) {
+      echo "<h1 class='title'>$test->name</h1>
+      <p>$test->surname</p>
+      <p>$test->time</p>";
+      }?>
+      </div>
+    </div>
+  </div>
 <nav class="panel">
-  <p class="panel-heading">
-    Bottles
-  </p>
+
+  <div class="panel-heading">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+      Bottles
+      </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <a href="/index.php/aroma-report?test_id=<?php echo $test_id;?>" class="icon-text button is-primary">
+            <span class="icon"><i class="fas fa-chart-pie"></i></span>
+            <span>Report</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="panel-block">
     <p class="control has-icons-left">
       <input oninput="filterBottlesByName()" id="bottleNameInput" class="input" type="text" placeholder="Search">
@@ -168,16 +213,6 @@ function tooglePreference(bottle_id, test_id, prefValue) {
 
 }
     </script>  
-
-
-<script>
- fetch('http://localhost:8082/wp-json/aroma/v1/bottle/1/')
-    .then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-    })
-</script>  
       </body>
   </html>
       

@@ -1,5 +1,7 @@
 <?php
+require(AROMA_PATH.'pages/navbar.php');
 global $wpdb;
+
 $tag_table_name = $wpdb->prefix . 'aroma_tags';
 $group_table_name = $wpdb->prefix . 'aroma_groups';
 $group_tag_table_name = $wpdb->prefix . 'aroma_group_tag';

@@ -1,4 +1,5 @@
 <?php
+require(AROMA_PATH.'pages/navbar.php');
 global $wpdb;
 $table_name = $wpdb->prefix . 'aroma_groups';
 $page_uri="admin.php?page=aromaGroupSetting";

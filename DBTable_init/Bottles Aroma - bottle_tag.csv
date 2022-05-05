@@ -1,0 +1,943 @@
+1,1,Angelica,Šaknys
+1,3,Angelica,Sėklos
+1,15,Angelica,Vyriški
+1,16,Angelica,Moteriški
+1,21,Angelica,4
+1,25,Angelica,Nervų
+1,32,Angelica,Emocinė
+1,33,Angelica,Hormoninė
+1,41,Angelica,Afrodiziakai
+1,44,Angelica,Širdies
+1,45,Angelica,Bazinė
+2,6,Balsam Fir,Lapai
+2,7,Balsam Fir,Spygliai
+2,14,Balsam Fir,Spygliuočiai
+2,19,Balsam Fir,2
+2,21,Balsam Fir,4
+2,22,Balsam Fir,5
+2,25,Balsam Fir,Nervų
+2,28,Balsam Fir,Virškinimo
+2,33,Balsam Fir,Hormoninė
+2,39,Balsam Fir,Atpalaiduojantys
+2,40,Balsam Fir,Adaptogenai
+2,43,Balsam Fir,Viršutinė
+2,44,Balsam Fir,Širdies
+3,5,Basil,Žolynai
+3,12,Basil,Maistiniai
+3,15,Basil,Vyriški
+3,18,Basil,1
+3,19,Basil,2
+3,20,Basil,3
+3,24,Basil,7
+3,26,Basil,Kraujotakos
+3,32,Basil,Emocinė
+3,33,Basil,Hormoninė
+3,35,Basil,Judamojo ir atramos
+3,38,Basil,Stimuliuojantys
+3,43,Basil,Viršutinė
+3,44,Basil,Širdies
+4,9,Bergamot,Vaisiai
+4,11,Bergamot,Citrusiniai
+4,15,Bergamot,Vyriški
+4,20,Bergamot,3
+4,21,Bergamot,4
+4,26,Bergamot,Kraujotakos
+4,28,Bergamot,Virškinimo
+4,32,Bergamot,Emocinė
+4,33,Bergamot,Hormoninė
+4,36,Bergamot,Jungiamojo audinio
+4,39,Bergamot,Atpalaiduojantys
+4,42,Bergamot,Antidepresantai
+4,43,Bergamot,Viršutinė
+5,2,Black Pepper,Prieskoniai
+5,9,Black Pepper,Vaisiai
+5,12,Black Pepper,Maistiniai
+5,18,Black Pepper,1
+5,20,Black Pepper,3
+5,26,Black Pepper,Kraujotakos
+5,27,Black Pepper,Kvėpavimo
+5,28,Black Pepper,Virškinimo
+5,35,Black Pepper,Judamojo ir atramos
+5,38,Black Pepper,Stimuliuojantys
+5,43,Black Pepper,Viršutinė
+5,44,Black Pepper,Širdies
+6,6,Black Spruce,Lapai
+6,7,Black Spruce,Spygliai
+6,14,Black Spruce,Spygliuočiai
+6,15,Black Spruce,Vyriški
+6,18,Black Spruce,1
+6,22,Black Spruce,5
+6,25,Black Spruce,Nervų
+6,26,Black Spruce,Kraujotakos
+6,27,Black Spruce,Kvėpavimo
+6,32,Black Spruce,Emocinė
+6,33,Black Spruce,Hormoninė
+6,39,Black Spruce,Atpalaiduojantys
+6,40,Black Spruce,Adaptogenai
+6,43,Black Spruce,Viršutinė
+6,44,Black Spruce,Širdies
+7,4,Blue Spruce,Mediena
+7,6,Blue Spruce,Lapai
+7,7,Blue Spruce,Spygliai
+7,14,Blue Spruce,Spygliuočiai
+7,19,Blue Spruce,2
+7,21,Blue Spruce,4
+7,24,Blue Spruce,7
+7,25,Blue Spruce,Nervų
+7,27,Blue Spruce,Kvėpavimo
+7,31,Blue Spruce,Imuninė
+7,32,Blue Spruce,Emocinė
+7,33,Blue Spruce,Hormoninė
+7,35,Blue Spruce,Judamojo ir atramos
+7,39,Blue Spruce,Atpalaiduojantys
+7,40,Blue Spruce,Adaptogenai
+7,44,Blue Spruce,Širdies
+8,5,Blue Tansy,Žolynai
+8,8,Blue Tansy,Žiedai
+8,16,Blue Tansy,Moteriški
+8,22,Blue Tansy,5
+8,25,Blue Tansy,Nervų
+8,31,Blue Tansy,Imuninė
+8,36,Blue Tansy,Jungiamojo audinio
+8,39,Blue Tansy,Atpalaiduojantys
+8,44,Blue Tansy,Širdies
+9,2,Caraway,Prieskoniai
+9,3,Caraway,Sėklos
+9,12,Caraway,Maistiniai
+9,20,Caraway,3
+9,25,Caraway,Nervų
+9,26,Caraway,Kraujotakos
+9,27,Caraway,Kvėpavimo
+9,28,Caraway,Virškinimo
+9,38,Caraway,Stimuliuojantys
+9,44,Caraway,Širdies
+10,9,Cardamom,Vaisiai
+10,12,Cardamom,Maistiniai
+10,15,Cardamom,Vyriški
+10,20,Cardamom,3
+10,25,Cardamom,Nervų
+10,26,Cardamom,Kraujotakos
+10,27,Cardamom,Kvėpavimo
+10,28,Cardamom,Virškinimo
+10,33,Cardamom,Hormoninė
+10,38,Cardamom,Stimuliuojantys
+10,40,Cardamom,Adaptogenai
+10,41,Cardamom,Afrodiziakai
+10,44,Cardamom,Širdies
+11,3,Carot Seed,Sėklos
+11,12,Carot Seed,Maistiniai
+11,18,Carot Seed,1
+11,23,Carot Seed,6
+11,24,Carot Seed,7
+11,28,Carot Seed,Virškinimo
+11,36,Carot Seed,Jungiamojo audinio
+11,38,Carot Seed,Stimuliuojantys
+11,40,Carot Seed,Adaptogenai
+11,42,Carot Seed,Antidepresantai
+11,44,Carot Seed,Širdies
+12,4,Cassia,Mediena
+12,6,Cassia,Lapai
+12,12,Cassia,Maistiniai
+12,16,Cassia,Moteriški
+12,19,Cassia,2
+12,20,Cassia,3
+12,26,Cassia,Kraujotakos
+12,28,Cassia,Virškinimo
+12,38,Cassia,Stimuliuojantys
+12,41,Cassia,Afrodiziakai
+12,42,Cassia,Antidepresantai
+12,44,Cassia,Širdies
+13,4,Cedarwood,Mediena
+13,14,Cedarwood,Spygliuočiai
+13,15,Cedarwood,Vyriški
+13,18,Cedarwood,1
+13,21,Cedarwood,4
+13,26,Cedarwood,Kraujotakos
+13,27,Cedarwood,Kvėpavimo
+13,36,Cedarwood,Jungiamojo audinio
+13,38,Cedarwood,Stimuliuojantys
+13,39,Cedarwood,Atpalaiduojantys
+13,40,Cedarwood,Adaptogenai
+13,41,Cedarwood,Afrodiziakai
+13,44,Cedarwood,Širdies
+13,45,Cedarwood,Bazinė
+14,3,Celery Seed,Sėklos
+14,12,Celery Seed,Maistiniai
+14,18,Celery Seed,1
+14,20,Celery Seed,3
+14,21,Celery Seed,4
+14,28,Celery Seed,Virškinimo
+14,35,Celery Seed,Judamojo ir atramos
+15,2,Cinnamon,Prieskoniai
+15,4,Cinnamon,Mediena
+15,12,Cinnamon,Maistiniai
+15,16,Cinnamon,Moteriški
+15,20,Cinnamon,3
+15,26,Cinnamon,Kraujotakos
+15,28,Cinnamon,Virškinimo
+15,31,Cinnamon,Imuninė
+15,32,Cinnamon,Emocinė
+15,38,Cinnamon,Stimuliuojantys
+15,45,Cinnamon,Bazinė
+16,6,Cistus,Lapai
+16,16,Cistus,Moteriški
+16,20,Cistus,3
+16,23,Cistus,6
+16,25,Cistus,Nervų
+16,27,Cistus,Kvėpavimo
+16,31,Cistus,Imuninė
+16,33,Cistus,Hormoninė
+16,36,Cistus,Jungiamojo audinio
+16,37,Cistus,Limfos
+16,39,Cistus,Atpalaiduojantys
+16,44,Cistus,Širdies
+16,45,Cistus,Bazinė
+17,5,Citronella,Žolynai
+17,11,Citronella,Citrusiniai
+17,20,Citronella,3
+17,25,Citronella,Nervų
+17,28,Citronella,Virškinimo
+17,35,Citronella,Judamojo ir atramos
+17,36,Citronella,Jungiamojo audinio
+17,39,Citronella,Atpalaiduojantys
+17,43,Citronella,Viršutinė
+17,44,Citronella,Širdies
+18,8,Clary Sage,Žiedai
+18,16,Clary Sage,Moteriški
+18,18,Clary Sage,1
+18,19,Clary Sage,2
+18,28,Clary Sage,Virškinimo
+18,33,Clary Sage,Hormoninė
+18,38,Clary Sage,Stimuliuojantys
+18,39,Clary Sage,Atpalaiduojantys
+18,41,Clary Sage,Afrodiziakai
+18,42,Clary Sage,Antidepresantai
+18,44,Clary Sage,Širdies
+20,2,Coriander,Prieskoniai
+20,3,Coriander,Sėklos
+20,12,Coriander,Maistiniai
+20,20,Coriander,3
+20,26,Coriander,Kraujotakos
+20,28,Coriander,Virškinimo
+20,33,Coriander,Hormoninė
+20,38,Coriander,Stimuliuojantys
+20,41,Coriander,Afrodiziakai
+20,42,Coriander,Antidepresantai
+20,43,Coriander,Viršutinė
+20,44,Coriander,Širdies
+21,10,Copaiba,Sakai
+21,17,Copaiba,Kultiniai
+21,20,Copaiba,3
+21,26,Copaiba,Kraujotakos
+21,27,Copaiba,Kvėpavimo
+21,28,Copaiba,Virškinimo
+21,31,Copaiba,Imuninė
+21,35,Copaiba,Judamojo ir atramos
+21,36,Copaiba,Jungiamojo audinio
+21,40,Copaiba,Adaptogenai
+21,45,Copaiba,Bazinė
+22,2,Cumin,Prieskoniai
+22,3,Cumin,Sėklos
+22,12,Cumin,Maistiniai
+22,20,Cumin,3
+22,26,Cumin,Kraujotakos
+22,28,Cumin,Virškinimo
+22,31,Cumin,Imuninė
+22,44,Cumin,Širdies
+23,4,Cypress,Mediena
+23,14,Cypress,Spygliuočiai
+23,15,Cypress,Vyriški
+23,19,Cypress,2
+23,22,Cypress,5
+23,26,Cypress,Kraujotakos
+23,27,Cypress,Kvėpavimo
+23,30,Cypress,Urologinė
+23,35,Cypress,Judamojo ir atramos
+23,36,Cypress,Jungiamojo audinio
+23,37,Cypress,Limfos
+23,39,Cypress,Atpalaiduojantys
+23,40,Cypress,Adaptogenai
+23,44,Cypress,Širdies
+24,5,Dill,Žolynai
+24,12,Dill,Maistiniai
+24,20,Dill,3
+24,22,Dill,5
+24,28,Dill,Virškinimo
+24,39,Dill,Atpalaiduojantys
+24,42,Dill,Antidepresantai
+24,44,Dill,Širdies
+25,10,Elemi,Sakai
+25,17,Elemi,Kultiniai
+25,20,Elemi,3
+25,21,Elemi,4
+25,27,Elemi,Kvėpavimo
+25,36,Elemi,Jungiamojo audinio
+25,38,Elemi,Stimuliuojantys
+25,39,Elemi,Atpalaiduojantys
+25,40,Elemi,Adaptogenai
+25,44,Elemi,Širdies
+25,45,Elemi,Bazinė
+26,6,Eucalyptus,Lapai
+26,13,Eucalyptus,Kamparo
+26,20,Eucalyptus,3
+26,21,Eucalyptus,4
+26,27,Eucalyptus,Kvėpavimo
+26,30,Eucalyptus,Urologinė
+26,31,Eucalyptus,Imuninė
+26,35,Eucalyptus,Judamojo ir atramos
+26,38,Eucalyptus,Stimuliuojantys
+26,40,Eucalyptus,Adaptogenai
+26,43,Eucalyptus,Viršutinė
+27,3,Fennel,Sėklos
+27,12,Fennel,Maistiniai
+27,18,Fennel,1
+27,19,Fennel,2
+27,20,Fennel,3
+27,21,Fennel,4
+27,27,Fennel,Kvėpavimo
+27,28,Fennel,Virškinimo
+27,29,Fennel,Žarnyno
+27,30,Fennel,Urologinė
+27,32,Fennel,Emocinė
+27,33,Fennel,Hormoninė
+27,38,Fennel,Stimuliuojantys
+27,44,Fennel,Širdies
+28,10,Frankincense,Sakai
+28,17,Frankincense,Kultiniai
+28,21,Frankincense,4
+28,22,Frankincense,5
+28,23,Frankincense,6
+28,24,Frankincense,7
+28,27,Frankincense,Kvėpavimo
+28,28,Frankincense,Virškinimo
+28,31,Frankincense,Imuninė
+28,32,Frankincense,Emocinė
+28,33,Frankincense,Hormoninė
+28,35,Frankincense,Judamojo ir atramos
+28,36,Frankincense,Jungiamojo audinio
+28,38,Frankincense,Stimuliuojantys
+28,39,Frankincense,Atpalaiduojantys
+28,40,Frankincense,Adaptogenai
+28,42,Frankincense,Antidepresantai
+28,45,Frankincense,Bazinė
+29,5,Geranium,Žolynai
+29,8,Geranium,Žiedai
+29,16,Geranium,Moteriški
+29,18,Geranium,1
+29,19,Geranium,2
+29,21,Geranium,4
+29,22,Geranium,5
+29,25,Geranium,Nervų
+29,28,Geranium,Virškinimo
+29,32,Geranium,Emocinė
+29,33,Geranium,Hormoninė
+29,36,Geranium,Jungiamojo audinio
+29,37,Geranium,Limfos
+29,38,Geranium,Stimuliuojantys
+29,39,Geranium,Atpalaiduojantys
+29,41,Geranium,Afrodiziakai
+29,42,Geranium,Antidepresantai
+29,44,Geranium,Širdies
+30,1,Ginger,Šaknys
+30,2,Ginger,Prieskoniai
+30,12,Ginger,Maistiniai
+30,15,Ginger,Vyriški
+30,19,Ginger,2
+30,20,Ginger,3
+30,25,Ginger,Nervų
+30,26,Ginger,Kraujotakos
+30,27,Ginger,Kvėpavimo
+30,28,Ginger,Virškinimo
+30,31,Ginger,Imuninė
+30,37,Ginger,Limfos
+30,38,Ginger,Stimuliuojantys
+30,41,Ginger,Afrodiziakai
+30,44,Ginger,Širdies
+30,45,Ginger,Bazinė
+31,8,Goldenrod,Žiedai
+31,15,Goldenrod,Vyriški
+31,18,Goldenrod,1
+31,19,Goldenrod,2
+31,20,Goldenrod,3
+31,26,Goldenrod,Kraujotakos
+31,27,Goldenrod,Kvėpavimo
+31,28,Goldenrod,Virškinimo
+31,30,Goldenrod,Urologinė
+31,33,Goldenrod,Hormoninė
+31,36,Goldenrod,Jungiamojo audinio
+31,37,Goldenrod,Limfos
+31,39,Goldenrod,Atpalaiduojantys
+31,44,Goldenrod,Širdies
+32,9,Grapefruit,Vaisiai
+32,11,Grapefruit,Citrusiniai
+32,20,Grapefruit,3
+32,21,Grapefruit,4
+32,23,Grapefruit,6
+32,26,Grapefruit,Kraujotakos
+32,28,Grapefruit,Virškinimo
+32,31,Grapefruit,Imuninė
+32,37,Grapefruit,Limfos
+32,38,Grapefruit,Stimuliuojantys
+32,40,Grapefruit,Adaptogenai
+32,42,Grapefruit,Antidepresantai
+32,43,Grapefruit,Viršutinė
+33,8,Helichrysum,Žiedai
+33,16,Helichrysum,Moteriški
+33,20,Helichrysum,3
+33,25,Helichrysum,Nervų
+33,26,Helichrysum,Kraujotakos
+33,28,Helichrysum,Virškinimo
+33,35,Helichrysum,Judamojo ir atramos
+33,36,Helichrysum,Jungiamojo audinio
+33,38,Helichrysum,Stimuliuojantys
+33,39,Helichrysum,Atpalaiduojantys
+33,44,Helichrysum,Širdies
+33,45,Helichrysum,Bazinė
+34,4,Hinoki,Mediena
+34,14,Hinoki,Spygliuočiai
+34,19,Hinoki,2
+34,21,Hinoki,4
+34,24,Hinoki,7
+34,25,Hinoki,Nervų
+34,27,Hinoki,Kvėpavimo
+34,28,Hinoki,Virškinimo
+34,33,Hinoki,Hormoninė
+34,36,Hinoki,Jungiamojo audinio
+34,44,Hinoki,Širdies
+34,45,Hinoki,Bazinė
+35,5,Hyssop,Žolynai
+35,16,Hyssop,Moteriški
+35,17,Hyssop,Kultiniai
+35,25,Hyssop,Nervų
+35,26,Hyssop,Kraujotakos
+35,27,Hyssop,Kvėpavimo
+35,33,Hyssop,Hormoninė
+35,38,Hyssop,Stimuliuojantys
+35,39,Hyssop,Atpalaiduojantys
+35,40,Hyssop,Adaptogenai
+35,41,Hyssop,Afrodiziakai
+35,44,Hyssop,Širdies
+36,4,Hong Kuai,Mediena
+36,14,Hong Kuai,Spygliuočiai
+36,17,Hong Kuai,Kultiniai
+36,19,Hong Kuai,2
+36,21,Hong Kuai,4
+36,24,Hong Kuai,7
+36,27,Hong Kuai,Kvėpavimo
+36,32,Hong Kuai,Emocinė
+36,40,Hong Kuai,Adaptogenai
+36,45,Hong Kuai,Bazinė
+37,9,Jade Lemon,Vaisiai
+37,11,Jade Lemon,Citrusiniai
+37,20,Jade Lemon,3
+37,21,Jade Lemon,4
+37,28,Jade Lemon,Virškinimo
+37,31,Jade Lemon,Imuninė
+37,38,Jade Lemon,Stimuliuojantys
+37,40,Jade Lemon,Adaptogenai
+37,43,Jade Lemon,Viršutinė
+38,8,Jasmin,Žiedai
+38,16,Jasmin,Moteriški
+38,19,Jasmin,2
+38,21,Jasmin,4
+38,23,Jasmin,6
+38,24,Jasmin,7
+38,32,Jasmin,Emocinė
+38,33,Jasmin,Hormoninė
+38,36,Jasmin,Jungiamojo audinio
+38,38,Jasmin,Stimuliuojantys
+38,39,Jasmin,Atpalaiduojantys
+38,41,Jasmin,Afrodiziakai
+38,42,Jasmin,Antidepresantai
+38,45,Jasmin,Bazinė
+39,6,Juniper,Lapai
+39,14,Juniper,Spygliuočiai
+39,18,Juniper,1
+39,19,Juniper,2
+39,23,Juniper,6
+39,24,Juniper,7
+39,28,Juniper,Virškinimo
+39,30,Juniper,Urologinė
+39,32,Juniper,Emocinė
+39,33,Juniper,Hormoninė
+39,35,Juniper,Judamojo ir atramos
+39,37,Juniper,Limfos
+39,39,Juniper,Atpalaiduojantys
+39,40,Juniper,Adaptogenai
+39,44,Juniper,Širdies
+40,6,Laurus Nobilis,Lapai
+40,13,Laurus Nobilis,Kamparo
+40,19,Laurus Nobilis,2
+40,21,Laurus Nobilis,4
+40,27,Laurus Nobilis,Kvėpavimo
+40,28,Laurus Nobilis,Virškinimo
+40,30,Laurus Nobilis,Urologinė
+40,31,Laurus Nobilis,Imuninė
+40,37,Laurus Nobilis,Limfos
+40,39,Laurus Nobilis,Atpalaiduojantys
+40,43,Laurus Nobilis,Viršutinė
+40,44,Laurus Nobilis,Širdies
+41,8,Lavender,Žiedai
+41,16,Lavender,Moteriški
+41,21,Lavender,4
+41,24,Lavender,7
+41,25,Lavender,Nervų
+41,26,Lavender,Kraujotakos
+41,27,Lavender,Kvėpavimo
+41,31,Lavender,Imuninė
+41,32,Lavender,Emocinė
+41,33,Lavender,Hormoninė
+41,35,Lavender,Judamojo ir atramos
+41,36,Lavender,Jungiamojo audinio
+41,39,Lavender,Atpalaiduojantys
+41,40,Lavender,Adaptogenai
+41,42,Lavender,Antidepresantai
+41,43,Lavender,Viršutinė
+41,44,Lavender,Širdies
+42,5,Ledum,Žolynai
+42,8,Ledum,Žiedai
+42,16,Ledum,Moteriški
+42,20,Ledum,3
+42,22,Ledum,5
+42,25,Ledum,Nervų
+42,27,Ledum,Kvėpavimo
+42,28,Ledum,Virškinimo
+42,31,Ledum,Imuninė
+42,33,Ledum,Hormoninė
+42,36,Ledum,Jungiamojo audinio
+42,39,Ledum,Atpalaiduojantys
+42,44,Ledum,Širdies
+43,9,Lemon,Vaisiai
+43,11,Lemon,Citrusiniai
+43,21,Lemon,4
+43,22,Lemon,5
+43,25,Lemon,Nervų
+43,26,Lemon,Kraujotakos
+43,27,Lemon,Kvėpavimo
+43,28,Lemon,Virškinimo
+43,31,Lemon,Imuninė
+43,36,Lemon,Jungiamojo audinio
+43,37,Lemon,Limfos
+43,39,Lemon,Atpalaiduojantys
+43,40,Lemon,Adaptogenai
+43,42,Lemon,Antidepresantai
+43,43,Lemon,Viršutinė
+44,6,Lemon Myrtle,Lapai
+44,11,Lemon Myrtle,Citrusiniai
+44,21,Lemon Myrtle,4
+44,27,Lemon Myrtle,Kvėpavimo
+44,31,Lemon Myrtle,Imuninė
+44,35,Lemon Myrtle,Judamojo ir atramos
+44,36,Lemon Myrtle,Jungiamojo audinio
+44,39,Lemon Myrtle,Atpalaiduojantys
+44,42,Lemon Myrtle,Antidepresantai
+44,43,Lemon Myrtle,Viršutinė
+45,5,Lemongrass,Žolynai
+45,11,Lemongrass,Citrusiniai
+45,20,Lemongrass,3
+45,25,Lemongrass,Nervų
+45,26,Lemongrass,Kraujotakos
+45,28,Lemongrass,Virškinimo
+45,31,Lemongrass,Imuninė
+45,35,Lemongrass,Judamojo ir atramos
+45,36,Lemongrass,Jungiamojo audinio
+45,37,Lemongrass,Limfos
+45,38,Lemongrass,Stimuliuojantys
+45,40,Lemongrass,Adaptogenai
+45,42,Lemongrass,Antidepresantai
+45,43,Lemongrass,Viršutinė
+45,44,Lemongrass,Širdies
+46,9,Lime,Vaisiai
+46,11,Lime,Citrusiniai
+46,20,Lime,3
+46,21,Lime,4
+46,26,Lime,Kraujotakos
+46,28,Lime,Virškinimo
+46,31,Lime,Imuninė
+46,40,Lime,Adaptogenai
+46,42,Lime,Antidepresantai
+46,43,Lime,Viršutinė
+47,5,Marjoram,Žolynai
+47,12,Marjoram,Maistiniai
+47,20,Marjoram,3
+47,21,Marjoram,4
+47,25,Marjoram,Nervų
+47,26,Marjoram,Kraujotakos
+47,35,Marjoram,Judamojo ir atramos
+47,39,Marjoram,Atpalaiduojantys
+47,40,Marjoram,Adaptogenai
+47,44,Marjoram,Širdies
+48,5,Melissa,Žolynai
+48,16,Melissa,Moteriški
+48,21,Melissa,4
+48,25,Melissa,Nervų
+48,26,Melissa,Kraujotakos
+48,27,Melissa,Kvėpavimo
+48,28,Melissa,Virškinimo
+48,31,Melissa,Imuninė
+48,32,Melissa,Emocinė
+48,33,Melissa,Hormoninė
+48,36,Melissa,Jungiamojo audinio
+48,38,Melissa,Stimuliuojantys
+48,39,Melissa,Atpalaiduojantys
+48,42,Melissa,Antidepresantai
+48,44,Melissa,Širdies
+49,10,Myrrh,Sakai
+49,17,Myrrh,Kultiniai
+49,20,Myrrh,3
+49,21,Myrrh,4
+49,25,Myrrh,Nervų
+49,26,Myrrh,Kraujotakos
+49,27,Myrrh,Kvėpavimo
+49,28,Myrrh,Virškinimo
+49,31,Myrrh,Imuninė
+49,32,Myrrh,Emocinė
+49,33,Myrrh,Hormoninė
+49,36,Myrrh,Jungiamojo audinio
+49,38,Myrrh,Stimuliuojantys
+49,39,Myrrh,Atpalaiduojantys
+49,40,Myrrh,Adaptogenai
+49,45,Myrrh,Bazinė
+50,6,Myrtle,Lapai
+50,16,Myrtle,Moteriški
+50,21,Myrtle,4
+50,22,Myrtle,5
+50,23,Myrtle,6
+50,25,Myrtle,Nervų
+50,27,Myrtle,Kvėpavimo
+50,28,Myrtle,Virškinimo
+50,31,Myrtle,Imuninė
+50,33,Myrtle,Hormoninė
+50,35,Myrtle,Judamojo ir atramos
+50,38,Myrtle,Stimuliuojantys
+50,39,Myrtle,Atpalaiduojantys
+50,40,Myrtle,Adaptogenai
+50,41,Myrtle,Afrodiziakai
+50,43,Myrtle,Viršutinė
+50,44,Myrtle,Širdies
+51,8,Neroli,Žiedai
+51,16,Neroli,Moteriški
+51,19,Neroli,2
+51,21,Neroli,4
+51,24,Neroli,7
+51,26,Neroli,Kraujotakos
+51,28,Neroli,Virškinimo
+51,32,Neroli,Emocinė
+51,36,Neroli,Jungiamojo audinio
+51,39,Neroli,Atpalaiduojantys
+51,41,Neroli,Afrodiziakai
+51,42,Neroli,Antidepresantai
+51,44,Neroli,Širdies
+52,2,Nutmeg,Prieskoniai
+52,3,Nutmeg,Sėklos
+52,9,Nutmeg,Vaisiai
+52,12,Nutmeg,Maistiniai
+52,15,Nutmeg,Vyriški
+52,18,Nutmeg,1
+52,19,Nutmeg,2
+52,20,Nutmeg,3
+52,25,Nutmeg,Nervų
+52,26,Nutmeg,Kraujotakos
+52,28,Nutmeg,Virškinimo
+52,31,Nutmeg,Imuninė
+52,33,Nutmeg,Hormoninė
+52,38,Nutmeg,Stimuliuojantys
+52,40,Nutmeg,Adaptogenai
+52,41,Nutmeg,Afrodiziakai
+52,45,Nutmeg,Bazinė
+53,6,Ocotea,Lapai
+53,12,Ocotea,Maistiniai
+53,19,Ocotea,2
+53,20,Ocotea,3
+53,26,Ocotea,Kraujotakos
+53,28,Ocotea,Virškinimo
+53,31,Ocotea,Imuninė
+53,39,Ocotea,Atpalaiduojantys
+53,40,Ocotea,Adaptogenai
+53,45,Ocotea,Bazinė
+54,10,Onycha,Sakai
+54,17,Onycha,Kultiniai
+54,20,Onycha,3
+54,25,Onycha,Nervų
+54,26,Onycha,Kraujotakos
+54,27,Onycha,Kvėpavimo
+54,28,Onycha,Virškinimo
+54,35,Onycha,Judamojo ir atramos
+54,36,Onycha,Jungiamojo audinio
+54,38,Onycha,Stimuliuojantys
+54,39,Onycha,Atpalaiduojantys
+54,40,Onycha,Adaptogenai
+54,45,Onycha,Bazinė
+55,9,Orange,Vaisiai
+55,11,Orange,Citrusiniai
+55,19,Orange,2
+55,20,Orange,3
+55,25,Orange,Nervų
+55,27,Orange,Kvėpavimo
+55,28,Orange,Virškinimo
+55,29,Orange,Žarnyno
+55,32,Orange,Emocinė
+55,36,Orange,Jungiamojo audinio
+55,37,Orange,Limfos
+55,38,Orange,Stimuliuojantys
+55,39,Orange,Atpalaiduojantys
+55,41,Orange,Afrodiziakai
+55,42,Orange,Antidepresantai
+55,43,Orange,Viršutinė
+56,5,Oregano,Žolynai
+56,12,Oregano,Maistiniai
+56,20,Oregano,3
+56,27,Oregano,Kvėpavimo
+56,28,Oregano,Virškinimo
+56,31,Oregano,Imuninė
+56,35,Oregano,Judamojo ir atramos
+56,37,Oregano,Limfos
+56,39,Oregano,Atpalaiduojantys
+56,42,Oregano,Antidepresantai
+56,44,Oregano,Širdies
+57,4,Palo Santo,Mediena
+57,17,Palo Santo,Kultiniai
+57,23,Palo Santo,6
+57,24,Palo Santo,7
+57,25,Palo Santo,Nervų
+57,27,Palo Santo,Kvėpavimo
+57,31,Palo Santo,Imuninė
+57,38,Palo Santo,Stimuliuojantys
+57,39,Palo Santo,Atpalaiduojantys
+57,40,Palo Santo,Adaptogenai
+57,44,Palo Santo,Širdies
+58,6,Patchouly,Lapai
+58,15,Patchouly,Vyriški
+58,18,Patchouly,1
+58,19,Patchouly,2
+58,21,Patchouly,4
+58,24,Patchouly,7
+58,25,Patchouly,Nervų
+58,26,Patchouly,Kraujotakos
+58,28,Patchouly,Virškinimo
+58,36,Patchouly,Jungiamojo audinio
+58,38,Patchouly,Stimuliuojantys
+58,40,Patchouly,Adaptogenai
+58,41,Patchouly,Afrodiziakai
+58,42,Patchouly,Antidepresantai
+58,45,Patchouly,Bazinė
+59,5,Peppermint,Žolynai
+59,12,Peppermint,Maistiniai
+59,18,Peppermint,1
+59,19,Peppermint,2
+59,20,Peppermint,3
+59,22,Peppermint,5
+59,25,Peppermint,Nervų
+59,27,Peppermint,Kvėpavimo
+59,28,Peppermint,Virškinimo
+59,31,Peppermint,Imuninė
+59,35,Peppermint,Judamojo ir atramos
+59,36,Peppermint,Jungiamojo audinio
+59,38,Peppermint,Stimuliuojantys
+59,40,Peppermint,Adaptogenai
+59,43,Peppermint,Viršutinė
+60,6,Pine,Lapai
+60,7,Pine,Spygliai
+60,14,Pine,Spygliuočiai
+60,18,Pine,1
+60,19,Pine,2
+60,22,Pine,5
+60,23,Pine,6
+60,25,Pine,Nervų
+60,27,Pine,Kvėpavimo
+60,28,Pine,Virškinimo
+60,31,Pine,Imuninė
+60,35,Pine,Judamojo ir atramos
+60,38,Pine,Stimuliuojantys
+60,40,Pine,Adaptogenai
+60,43,Pine,Viršutinė
+61,6,Ravintsara,Lapai
+61,13,Ravintsara,Kamparo
+61,20,Ravintsara,3
+61,21,Ravintsara,4
+61,27,Ravintsara,Kvėpavimo
+61,31,Ravintsara,Imuninė
+61,35,Ravintsara,Judamojo ir atramos
+61,36,Ravintsara,Jungiamojo audinio
+61,40,Ravintsara,Adaptogenai
+61,42,Ravintsara,Antidepresantai
+61,44,Ravintsara,Širdies
+62,8,Roman Camomile,Žiedai
+62,16,Roman Camomile,Moteriški
+62,21,Roman Camomile,4
+62,24,Roman Camomile,7
+62,25,Roman Camomile,Nervų
+62,28,Roman Camomile,Virškinimo
+62,32,Roman Camomile,Emocinė
+62,33,Roman Camomile,Hormoninė
+62,36,Roman Camomile,Jungiamojo audinio
+62,39,Roman Camomile,Atpalaiduojantys
+62,42,Roman Camomile,Antidepresantai
+62,44,Roman Camomile,Širdies
+63,8,Rose,Žiedai
+63,16,Rose,Moteriški
+63,21,Rose,4
+63,24,Rose,7
+63,25,Rose,Nervų
+63,26,Rose,Kraujotakos
+63,28,Rose,Virškinimo
+63,32,Rose,Emocinė
+63,33,Rose,Hormoninė
+63,36,Rose,Jungiamojo audinio
+63,38,Rose,Stimuliuojantys
+63,39,Rose,Atpalaiduojantys
+63,41,Rose,Afrodiziakai
+63,42,Rose,Antidepresantai
+63,45,Rose,Bazinė
+64,5,Rosemary,Žolynai
+64,12,Rosemary,Maistiniai
+64,21,Rosemary,4
+64,25,Rosemary,Nervų
+64,26,Rosemary,Kraujotakos
+64,28,Rosemary,Virškinimo
+64,31,Rosemary,Imuninė
+64,35,Rosemary,Judamojo ir atramos
+64,36,Rosemary,Jungiamojo audinio
+64,37,Rosemary,Limfos
+64,38,Rosemary,Stimuliuojantys
+64,40,Rosemary,Adaptogenai
+64,41,Rosemary,Afrodiziakai
+64,42,Rosemary,Antidepresantai
+64,43,Rosemary,Viršutinė
+64,44,Rosemary,Širdies
+65,4,Sandalwood,Mediena
+65,17,Sandalwood,Kultiniai
+65,18,Sandalwood,1
+65,19,Sandalwood,2
+65,23,Sandalwood,6
+65,24,Sandalwood,7
+65,25,Sandalwood,Nervų
+65,26,Sandalwood,Kraujotakos
+65,27,Sandalwood,Kvėpavimo
+65,32,Sandalwood,Emocinė
+65,33,Sandalwood,Hormoninė
+65,35,Sandalwood,Judamojo ir atramos
+65,36,Sandalwood,Jungiamojo audinio
+65,37,Sandalwood,Limfos
+65,38,Sandalwood,Stimuliuojantys
+65,39,Sandalwood,Atpalaiduojantys
+65,40,Sandalwood,Adaptogenai
+65,41,Sandalwood,Afrodiziakai
+65,45,Sandalwood,Bazinė
+66,5,Spearmint,Žolynai
+66,12,Spearmint,Maistiniai
+66,20,Spearmint,3
+66,21,Spearmint,4
+66,28,Spearmint,Virškinimo
+66,32,Spearmint,Emocinė
+66,38,Spearmint,Stimuliuojantys
+66,42,Spearmint,Antidepresantai
+66,43,Spearmint,Viršutinė
+67,9,Tangerine,Vaisiai
+67,11,Tangerine,Citrusiniai
+67,19,Tangerine,2
+67,20,Tangerine,3
+67,22,Tangerine,5
+67,28,Tangerine,Virškinimo
+67,31,Tangerine,Imuninė
+67,32,Tangerine,Emocinė
+67,36,Tangerine,Jungiamojo audinio
+67,37,Tangerine,Limfos
+67,39,Tangerine,Atpalaiduojantys
+67,40,Tangerine,Adaptogenai
+67,42,Tangerine,Antidepresantai
+67,43,Tangerine,Viršutinė
+68,5,Tarragon,Žolynai
+68,12,Tarragon,Maistiniai
+68,18,Tarragon,1
+68,19,Tarragon,2
+68,20,Tarragon,3
+68,21,Tarragon,4
+68,25,Tarragon,Nervų
+68,28,Tarragon,Virškinimo
+68,33,Tarragon,Hormoninė
+68,35,Tarragon,Judamojo ir atramos
+68,38,Tarragon,Stimuliuojantys
+68,44,Tarragon,Širdies
+69,6,Tea Tree,Lapai
+69,13,Tea Tree,Kamparo
+69,20,Tea Tree,3
+69,24,Tea Tree,7
+69,27,Tea Tree,Kvėpavimo
+69,31,Tea Tree,Imuninė
+69,33,Tea Tree,Hormoninė
+69,36,Tea Tree,Jungiamojo audinio
+69,38,Tea Tree,Stimuliuojantys
+69,40,Tea Tree,Adaptogenai
+69,43,Tea Tree,Viršutinė
+70,5,Thyme,Žolynai
+70,12,Thyme,Maistiniai
+70,20,Thyme,3
+70,21,Thyme,4
+70,26,Thyme,Kraujotakos
+70,27,Thyme,Kvėpavimo
+70,28,Thyme,Virškinimo
+70,31,Thyme,Imuninė
+70,35,Thyme,Judamojo ir atramos
+70,36,Thyme,Jungiamojo audinio
+70,38,Thyme,Stimuliuojantys
+70,39,Thyme,Atpalaiduojantys
+70,42,Thyme,Antidepresantai
+70,43,Thyme,Viršutinė
+70,44,Thyme,Širdies
+71,1,Valerian,Šaknys
+71,12,Valerian,Maistiniai
+71,19,Valerian,2
+71,21,Valerian,4
+71,24,Valerian,7
+71,25,Valerian,Nervų
+71,28,Valerian,Virškinimo
+71,39,Valerian,Atpalaiduojantys
+71,45,Valerian,Bazinė
+72,3,Vanilla,Sėklos
+72,12,Vanilla,Maistiniai
+72,19,Vanilla,2
+72,21,Vanilla,4
+72,22,Vanilla,5
+72,28,Vanilla,Virškinimo
+72,32,Vanilla,Emocinė
+72,39,Vanilla,Atpalaiduojantys
+72,45,Vanilla,Bazinė
+73,1,Vetiver,Šaknys
+73,15,Vetiver,Vyriški
+73,18,Vetiver,1
+73,21,Vetiver,4
+73,25,Vetiver,Nervų
+73,26,Vetiver,Kraujotakos
+73,32,Vetiver,Emocinė
+73,33,Vetiver,Hormoninė
+73,35,Vetiver,Judamojo ir atramos
+73,36,Vetiver,Jungiamojo audinio
+73,38,Vetiver,Stimuliuojantys
+73,40,Vetiver,Adaptogenai
+73,41,Vetiver,Afrodiziakai
+73,45,Vetiver,Bazinė
+74,8,Ylang Ylang,Žiedai
+74,16,Ylang Ylang,Moteriški
+74,19,Ylang Ylang,2
+74,21,Ylang Ylang,4
+74,25,Ylang Ylang,Nervų
+74,26,Ylang Ylang,Kraujotakos
+74,32,Ylang Ylang,Emocinė
+74,33,Ylang Ylang,Hormoninė
+74,39,Ylang Ylang,Atpalaiduojantys
+74,41,Ylang Ylang,Afrodiziakai
+74,42,Ylang Ylang,Antidepresantai
+74,44,Ylang Ylang,Širdies
+74,45,Ylang Ylang,Bazinė
+75,6,Wintergreen,Lapai
+75,13,Wintergreen,Kamparo
+75,20,Wintergreen,3
+75,21,Wintergreen,4
+75,26,Wintergreen,Kraujotakos
+75,27,Wintergreen,Kvėpavimo
+75,28,Wintergreen,Virškinimo
+75,35,Wintergreen,Judamojo ir atramos
+75,40,Wintergreen,Adaptogenai
+75,43,Wintergreen,Viršutinė
+75,44,Wintergreen,Širdies

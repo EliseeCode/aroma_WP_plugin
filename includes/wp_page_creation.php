@@ -1,25 +1,34 @@
 <?php
-function CopyFile($file_name,$slug) {
-
-$TemplateFileSourceURL = AROMA_DIR . "/pages/" . $file_name; // Address to your file in the plugin directory
-$TemplateFileTargetURL = get_stylesheet_directory() . '/page-'.$slug.'.php'; // Note the "page-" prefix, it is necessary for WP to select this file instead of the general "page.php". The name after the prefix must match the slug of the page created in WP. 
-
-if ( !file_exists( $TemplateFileSourceURL ) ) {
-  return FALSE;
+function aroma_answer_content(){
+    include(AROMA_PATH."pages/aroma_answer_page.php");
+        die();
+}
+function aroma_test_content(){
+    include(AROMA_PATH."pages/CRUD_tests_page.php");
+        die();
+}
+function aroma_test_report_content(){
+    include(AROMA_PATH."pages/aroma_report.php");
+        die();
 }
 
-$GetTemplate = file_get_contents( $TemplateFileSourceURL );
-if ( !$GetTemplate ) {
-  return FALSE;
+function page_router_init()
+{
+    if(is_page('aroma-answers')){   
+        add_filter('the_title',function(){return "answer";});
+        add_filter('the_content','aroma_answer_content');
+    }else if(is_page('aroma-tests')){
+        add_filter('the_title',function(){return "tests";});
+        add_filter('the_content','aroma_test_content');
+    }else if(is_page('aroma-report')){
+        add_filter('the_title',function(){return "report";});
+        add_filter('the_content','aroma_test_report_content');
+        add_action('wp_enqueue_scripts','wp_chart_script');
+    }
 }
+add_action( 'wp', 'page_router_init' );
 
-$WriteTemplate = file_put_contents( $TemplateFileTargetURL, $GetTemplate );
-if ( !$WriteTemplate ) {
-  return FALSE;
+function wp_chart_script(){
+    wp_register_script( 'chartJS', AROMA_URL.'node_modules/chart.js/dist/chart.min.js');
+    wp_enqueue_script('chartJS');
 }
-return TRUE;
-}
-
-
-CopyFile("CRUD_tests_page.php","aroma-tests");
-CopyFile("CRUD_answers_page.php","aroma-answers");
