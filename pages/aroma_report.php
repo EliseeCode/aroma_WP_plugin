@@ -35,6 +35,7 @@ else{
   echo "pas de test_id ;(";
   return;
 }
+echo "<script>test_id=".json_encode($test_id).";</script>";
 //Check if user is allowed to see the test
 $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
 if ($checkIfExists == NULL) {
@@ -83,9 +84,11 @@ if ($checkIfExists == NULL) {
 $tests = $wpdb->get_results("SELECT *
 FROM $test_table 
 WHERE id=$test_id");
+if($tests==NULL){return "error";}
 foreach ($tests as $t){
   $test=$t;
 }
+
 ?>
 <style>
   .groupItem{
@@ -101,6 +104,7 @@ foreach ($tests as $t){
     display:inline-block;
     margin:4px;
   }  
+  .saved{border:2px lime solid;}
 </style>
 <div class="wrap container" style="text-align:center;">
   <div class="level">
@@ -120,12 +124,11 @@ foreach ($tests as $t){
       ?>
       </div>
     </div>
-    <div class="level-item">
-      <textarea class="textarea">
-      <?php
-      echo "$test->comment";
-      ?>
-      </textarea>
+    <div class="level-item field">
+      <div class='control'>
+        <label>Comment</label>
+        <textarea id='uptcomment' oninput="updateTestComment();" class="textarea"><?php echo "$test->comment";?></textarea>
+      </div>
     </div>
   </div> 
 
@@ -203,7 +206,13 @@ foreach ($tests as $t){
   
 
 </div>
-
+<?php
+  $wpApiSettings= array(
+       'root' => esc_url_raw( rest_url() ),
+       'nonce' => wp_create_nonce( 'wp_rest' )
+   );
+  echo "<script>wpApiSettings=".json_encode($wpApiSettings).";</script>";
+?>
   <script>
     console.log(bottles,groups,tags);
     //Construction of the superDataObject
@@ -346,8 +355,28 @@ foreach ($tests as $t){
 
 
 <script>
-  
-
+  var timer;
+  function updateTestComment(){
+    if(timer){
+      clearTimeout(timer);
+    }
+    timer=setTimeout(sendAjaxUpdateComment,1000);
+  }
+  function sendAjaxUpdateComment()
+  {
+    comment=jQuery('#uptcomment').val();
+    jQuery.ajax({
+              url: wpApiSettings.root + 'aroma/v1/testComment/',
+              method: 'POST',
+              data:{test_id:test_id, comment},
+              beforeSend: function (xhr) {
+                  xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
+              }
+          }).done(function (response) {
+            jQuery('#uptcomment').addClass("saved");
+            setTimeout(()=>{jQuery('#uptcomment').removeClass("saved");},500);
+          });
+  }
   
 
  

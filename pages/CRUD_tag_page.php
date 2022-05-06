@@ -60,21 +60,21 @@ if (isset($_GET['uptTag'])) {
     echo "
     <div class='wrap'>
     <h2>Update Tags</h2>
-    <table class='wp-list-table widefat striped'>
+    <table class='table wp-list-table striped'>
       <thead>
         <tr>
-          <th width='5%'>Tag Id</th>
-          <th width='25%'>TagName</th>
-          <th width='25%'>Group</th>
-          <th width='25%'>Actions</th>
+          <th >Tag Id</th>
+          <th >TagName</th>
+          <th >Group</th>
+          <th >Actions</th>
         </tr>
       </thead>
       <tbody>
         <form action='".$page_uri."' method='post'>
           <tr>
-            <td width='5%'>$tag_id<input type='hidden' id='uptid' name='uptid' value='$tag_id'></td>
-            <td width='25%'><input type='text' id='uptname' name='uptname' value='$tag_name'></td>
-            <td><select name='uptgroup'>";
+            <td >$tag_id<input type='hidden' id='uptid' name='uptid' value='$tag_id'></td>
+            <td ><input class='input' type='text' id='uptname' name='uptname' value='$tag_name'></td>
+            <td><div class='select'><select name='uptgroup'>";
             foreach ($resultGroup as $print) {
               if($print->id==$group_id){
                 echo "<option value=$print->id selected>$print->name</option>";
@@ -83,8 +83,8 @@ if (isset($_GET['uptTag'])) {
               echo "<option value=$print->id>$print->name</option>";
               }
             }
-            echo "</select></td>
-            <td width='25%'><button id='uptsubmit' name='uptsubmitTag' type='submit'>update</button><a href='".$page_uri."'><button type='button'>cancel</button></a></td>
+            echo "</select></div></td>
+            <td ><button class='button is-primary' id='uptsubmit' name='uptsubmitTag' type='submit'>update</button><a href='".$page_uri."'><button class='button' type='button'>cancel</button></a></td>
           </tr>
         </form>
       </tbody>
@@ -122,27 +122,27 @@ if (isset($_GET['uptTag'])) {
     </form>
     <hr>
     <h2>Previous Tags</h2>
-    <table class="wp-list-table widefat striped">
+    <table class="table wp-list-table striped">
         <thead>
             <tr>
-                <th width="5%">Tag ID</th>
-                <th width="25%">Name</th>
-                <th width="25%">Group</th>
-                <th width="25%">Actions</th>
+                <th >Tag ID</th>
+                <th>Name</th>
+                <th >Group</th>
+                <th >Actions</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach ($resultTag as $print) {
         echo "<tr>
-                <td width='5%'>$print->tag_id</td>
-                <td width='25%'>$print->tag_name</td>
-                <td width='25%'>$print->group_name</td>
-                <td width='25%'>
+                <td >$print->tag_id</td>
+                <td >$print->tag_name</td>
+                <td >$print->group_name</td>
+                <td >
                     <a href='".$page_uri."&uptTag=$print->tag_id'>
-                        <button type='button'>update Tag informations</button>
+                        <button class='button is-primary' type='button'>Edit</button>
                     </a> 
                     <a href='".$page_uri."&delTag=$print->tag_id'>
-                        <button type='button'>delete</button>
+                        <button class='button is-danger' type='button'>Delete</button>
                     </a>
                 </td>
             </tr>";

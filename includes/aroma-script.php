@@ -6,6 +6,11 @@ function wppluggin_admin_script(){
     ['jquery'],
     time()
     );
+    wp_enqueue_script('aroma-table',
+    AROMA_URL.'admin/js/table.min.js',
+    ['jquery'],
+    time()
+    );
 }
 add_action('admin_enqueue_scripts','wppluggin_admin_script');
 
@@ -15,7 +20,11 @@ function wppluggin_public_script(){
     ['jquery'],
     time()
     );
-
+    wp_enqueue_script('aroma-table',
+    AROMA_URL.'admin/js/table.min.js',
+    ['jquery'],
+    time()
+    );
     wp_localize_script( 'aroma-public', 'wpApiSettings', array(
         'root' => esc_url_raw( rest_url() ),
         'nonce' => wp_create_nonce( 'wp_rest' )

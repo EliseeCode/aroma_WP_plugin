@@ -27,8 +27,6 @@ function setPref( WP_REST_Request $request ) {
     if ($checkIfExists == NULL) {
         return "error";
     }
-
-
     $table_name = $wpdb->prefix . 'aroma_test_bottle_preference';
     
     $where=[
@@ -45,14 +43,27 @@ function setPref( WP_REST_Request $request ) {
         'bottle_id'=>$bottle_id
       ) 
     );
-
-    //$result = $wpdb->get_results("SELECT * FROM $table_name WHERE id=$bottleId");
-    // foreach($result as $print) {
-    //   $name = $print->name;
-    // }
-    // if ( empty( $result ) ) {
-    //     return null;
-    // }
- 
   return ["user_id"=>$user_id,"request"=>$request,"bottle_id"=>$bottle_id,"test_id"=>$test_id,"pref"=>$prefValue];
+}
+
+
+function setComment( WP_REST_Request $request ) {
+    global $wpdb;
+    $user_id=get_current_user_id();
+    $test_id=$request["test_id"];
+    $comment=trim($request["comment"]);
+    //Allowed?
+    $test_table = $wpdb->prefix . 'aroma_tests';
+    $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
+    if ($checkIfExists == NULL) {
+        return "error";
+    }
+    $table_name = $wpdb->prefix . 'aroma_tests';
+    
+    $where=[
+      'test_id' => $test_id,
+    ];
+    $wpdb->query("UPDATE $table_name SET comment='$comment' WHERE id='$test_id'");
+  
+  return ["status"=>"success"];
 }

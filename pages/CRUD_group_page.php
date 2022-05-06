@@ -36,21 +36,20 @@ if (isset($_GET['uptGroup'])) {
     echo "
     <div class='wrap'>
     <h2>Update Groups</h2>
-    <table class='wp-list-table widefat striped'>
+    <table class='wp-list-table striped'>
       <thead>
         <tr>
-          <th width='5%'>Group Id</th>
-          <th width='25%'>Date</th>
-          <th width='25%'>Name</th>
-          <th width='25%'>Actions</th>
+          <th >Group Id</th>
+          <th >Name</th>
+          <th >Actions</th>
         </tr>
       </thead>
       <tbody>
         <form action='".$page_uri."' method='post'>
           <tr>
-            <td width='5%'>$print->id<input type='hidden' id='uptid' name='uptid' value='$print->id'></td>
-            <td width='25%'><input type='text' id='uptname' name='uptname' value='$print->name'></td>
-            <td width='25%'><button id='uptsubmit' name='uptsubmitGroup' type='submit'>update</button><a href='".$page_uri."'><button type='button'>cancel</button></a></td>
+            <td>$print->id<input type='hidden' id='uptid' name='uptid' value='$print->id'></td>
+            <td><input class='input' type='text' id='uptname' name='uptname' value='$print->name'></td>
+            <td><button class='button is-primary' id='uptsubmit' name='uptsubmitGroup' type='submit'>Update</button><a href='".$page_uri."'><button class='button' type='button'>cancel</button></a></td>
           </tr>
         </form>
       </tbody>
@@ -67,33 +66,31 @@ if (isset($_GET['uptGroup'])) {
     <h2>New Group</h2>
     <form action="" method="post">
         <tr>
-            <td><input type="text" id="newname" name="newname" placeholder="group's name"></td>
-            <td><button id="newsubmit" name="newsubmitGroup" type="submit">New</button></td>
+            <td><input class='input' type="text" id="newname" name="newname" placeholder="group's name"></td>
+            <td><button class='button is-primary' id="newsubmit" name="newsubmitGroup" type="submit">New</button></td>
         </tr>
     </form>
     <hr>
     <h2>Previous Groups</h2>
-    <table class="wp-list-table widefat striped">
+    <table class="table wp-list-table striped">
         <thead>
             <tr>
-                <th width="5%">Group ID</th>
-                <th width="25%">Date</th>
-                <th width="25%">Name</th>
-                <th width="25%">Actions</th>
+                <th >Group ID</th>
+                <th >Name</th>
+                <th >Actions</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach ($result as $print) {
         echo "<tr>
-                <td width='5%'>$print->id</td>
-                <td width='25%'>$print->time</td>
-                <td width='25%'>$print->name</td>
-                <td width='25%'>
+                <td >$print->id</td>
+                <td >$print->name</td>
+                <td >
                     <a href='".$page_uri."&uptGroup=$print->id'>
-                        <button type='button'>update Group informations</button>
+                        <button class='button is-primary' type='button'>Edit</button>
                     </a> 
                     <a href='".$page_uri."&delGroup=$print->id'>
-                        <button type='button'>delete</button>
+                        <button class='button is-danger' type='button'>Delete</button>
                     </a>
 
                 </td>
