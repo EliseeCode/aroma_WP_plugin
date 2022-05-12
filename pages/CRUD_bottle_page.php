@@ -180,7 +180,7 @@ if (isset($_GET['upt'])) {
     </table>
    <script>
      jQuery(document).ready( function () {
-      jQuery('#bottleTable').DataTable();
+      
       for(let k in bottles)
       {
         bottle=bottles[k];
@@ -191,12 +191,15 @@ if (isset($_GET['upt'])) {
         dataTag={};
         for(let t in groupTagArray)
         {
+          
           [groupName,tagName]=groupTagArray[t].split(':');
-          console.log(groupName,tagName);
+          //console.log(groupName,tagName);
           dataTag={...dataTag,
-            [groupName]:[...dataTag[groupName]||[],tagName]};  
+            [groupName]:[...dataTag[groupName]||[],tagName]};
+          
         }
         GroupNames=Object.keys(dataTag);
+        //console.log('group&tag for bottle:'+bottle_id,dataTag);
         for(g in GroupNames){
           groupName=GroupNames[g];
           tagsFromGroup=dataTag[groupName].map((tagName)=>{return `<span class="tag">${tagName}</span>`}).join('')
@@ -206,6 +209,7 @@ if (isset($_GET['upt'])) {
         
       }
       
+      jQuery('#bottleTable').DataTable();
 } );
    </script>  
 </div>

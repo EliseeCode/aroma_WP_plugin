@@ -1,7 +1,41 @@
 <?php
 global $_db_version;
-$aroma_db_version = '1.2';
+$aroma_db_version = '1.3';
 
+function tables_delete() {
+	// Delete table when deactivate
+	global $wpdb;
+	$tableNames=['aroma_bottles',
+	'aroma_tests',
+	'aroma_tags',
+	'aroma_groups',
+	'aroma_group_tag',
+	'aroma_bottle_tag',
+	'aroma_test_bottle_preference'];
+	forEach($tableNames as $tableNameEnding){
+		$table_name = $wpdb->prefix . $tableNameEnding;
+		$sql = "DROP TABLE IF EXISTS $table_name;";
+		$wpdb->query($sql);
+	}
+	delete_option("aroma_db_version");
+}
+function tables_empty() {
+	// Delete table when deactivate
+	global $wpdb;
+	$tableNames=['aroma_bottles',
+	'aroma_tests',
+	'aroma_tags',
+	'aroma_groups',
+	'aroma_group_tag',
+	'aroma_bottle_tag',
+	'aroma_test_bottle_preference'];
+	forEach($tableNames as $tableNameEnding){
+		$table_name = $wpdb->prefix . $tableNameEnding;
+		$sql = "IF EXISTS TRUNCATE TABLE $table_name;";
+		$wpdb->query($sql);
+	}
+	delete_option("aroma_db_version");
+}
 function tables_install() {
 	global $wpdb;
 	global $aroma_db_version;
@@ -115,6 +149,7 @@ function tables_install() {
 		bottle_id mediumint(9) NOT NULL,
 		test_id mediumint(9) NOT NULL,
 		preference TINYINT NOT NULL,
+		position TINYINT DEFAULT '-1',
 		creator_id mediumint(9),
 		PRIMARY KEY  (id)
 	) $charset_collate;";

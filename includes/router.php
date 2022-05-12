@@ -15,4 +15,8 @@ add_action( 'rest_api_init', function () {
     'methods' => 'POST',
     'callback' => 'setComment',
   ) );
+  register_rest_route( 'aroma/v1', '/setPositions', array(
+    'methods' => 'POST',
+    'callback' => 'setPositions',
+  ) );
 } );

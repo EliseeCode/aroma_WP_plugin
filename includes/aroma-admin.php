@@ -6,7 +6,7 @@
 function addAdminPageContent(){
     	        add_menu_page(
                     'Aroma bottle',
-                    'Aroma bottle',
+                    'Aroma Plugin',
                     'manage_options',
                     'aromaSetting',
                     'aromaAdminPage',
@@ -85,3 +85,9 @@ include(AROMA_PATH.'includes/databaseSetup.php');
 register_activation_hook( AROMA_FILE, 'tables_install' );
 register_activation_hook( AROMA_FILE, 'tables_install_data' );
 
+//Uninstall
+register_deactivation_hook( AROMA_FILE, 'tables_delete' );
+//ON delete
+// if( defined( 'WP_UNINSTALL_PLUGIN' ) ){
+//     tables_delete();
+// }

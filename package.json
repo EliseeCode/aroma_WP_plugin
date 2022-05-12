@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EliseeCode/aroma_WP_plugin#readme",
   "dependencies": {
-    "chart.js": "^3.7.1"
+    "chart.js": "^3.7.1",
+    "chartjs-plugin-datalabels": "^2.0.0"
   }
 }

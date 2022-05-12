@@ -18,13 +18,16 @@ function getBottle( WP_REST_Request $request ) {
 function setPref( WP_REST_Request $request ) {
     global $wpdb;
     $user_id=get_current_user_id();
-    $bottle_id=$request["bottle_id"];
-    $prefValue=$request["prefValue"];
+    $bottle_id=(int) $request["bottle_id"];
+    $prefValue=(int) $request["prefValue"];
+    if($prefValue<0 || $prefValue>4){
+      return "error";
+    }
     $test_id=$request["test_id"];
     //Allowed?
     $test_table = $wpdb->prefix . 'aroma_tests';
     $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
-    if ($checkIfExists == NULL) {
+    if ($checkIfExists == NULL && !has_user_role('administrator')) {
         return "error";
     }
     $table_name = $wpdb->prefix . 'aroma_test_bottle_preference';
@@ -45,6 +48,29 @@ function setPref( WP_REST_Request $request ) {
     );
   return ["user_id"=>$user_id,"request"=>$request,"bottle_id"=>$bottle_id,"test_id"=>$test_id,"pref"=>$prefValue];
 }
+function setPositions( WP_REST_Request $request ) {
+    global $wpdb;
+    $user_id=get_current_user_id();
+    $positions=explode(",", $request["positions"]);
+    
+    $test_id=$request["test_id"];
+    //Allowed?
+    $test_table = $wpdb->prefix . 'aroma_tests';
+    $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
+    if ($checkIfExists == NULL && !has_user_role('administrator')) {
+        return "error";
+    }
+    //Update positions
+    $table_name = $wpdb->prefix . 'aroma_test_bottle_preference';
+    $pos=0;
+    for($pos=0;$pos<count($positions);$pos++)
+    {
+      $bottleId=$positions[$pos];
+      $wpdb->query("UPDATE $table_name SET position=$pos WHERE test_id=$test_id AND bottle_id=$bottleId");
+    }
+    
+  return "success";
+}
 
 
 function setComment( WP_REST_Request $request ) {
@@ -55,7 +81,7 @@ function setComment( WP_REST_Request $request ) {
     //Allowed?
     $test_table = $wpdb->prefix . 'aroma_tests';
     $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
-    if ($checkIfExists == NULL) {
+    if ($checkIfExists == NULL && !has_user_role('administrator')) {
         return "error";
     }
     $table_name = $wpdb->prefix . 'aroma_tests';

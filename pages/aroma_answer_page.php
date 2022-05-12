@@ -36,9 +36,9 @@ else{
 }
 //Check if user is allowed to see the test
     $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
-    if ($checkIfExists == NULL) {
-        return "error";
-}
+    if ($checkIfExists == NULL && !has_user_role('administrator')) {
+        return "You are not allowed to see this test";
+    }
 //GET test
 $tests = $wpdb->get_results("SELECT *
     FROM $test_table 

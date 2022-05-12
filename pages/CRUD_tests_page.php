@@ -25,6 +25,7 @@ $user_id=get_current_user_id();
 if (isset($_POST['newsubmitTest'])) {
     $name = $_POST['newname'];
     $comment = $_POST['newcomment'];
+    
     $wpdb->query("INSERT INTO $table_name(time, name,comment,creator_id) VALUES(NOW(),'$name','$comment',$user_id)");
     
     echo "<script>location.replace('".$page_uri."');</script>";
@@ -32,8 +33,11 @@ if (isset($_POST['newsubmitTest'])) {
 //DELETE
 if (isset($_GET['delTest'])) {
     $del_id = (int)$_GET['delTest'];
-    $wpdb->query("DELETE FROM $table_name WHERE id='$del_id' AND creator_id='$user_id'");
-    
+    if(has_user_role('administrator')){
+      $wpdb->query("DELETE FROM $table_name WHERE id='$del_id'");
+    }else{
+      $wpdb->query("DELETE FROM $table_name WHERE id='$del_id' AND creator_id='$user_id'");
+    }
     echo "<script>location.replace('".$page_uri."');</script>";
   }  
 //UPDATE
@@ -41,14 +45,21 @@ if (isset($_POST['uptsubmitTest'])) {
     $id = (int)$_POST['uptid'];
     $name = $_POST['uptname'];
     $comment = $_POST['uptcomment'];
-    $wpdb->query("UPDATE $table_name SET comment='$comment', name='$name' WHERE id='$id' AND creator_id='$user_id'");
-    
+    if(has_user_role('administrator')){
+      $wpdb->query("UPDATE $table_name SET comment='$comment', name='$name' WHERE id='$id'");
+    }else{
+      $wpdb->query("UPDATE $table_name SET comment='$comment', name='$name' WHERE id='$id' AND creator_id='$user_id'");
+    }
     echo "<script>location.replace('".$page_uri."');</script>";
   }
 //UPDATE FORM
 if (isset($_GET['uptTest'])) {
     $upt_id = (int)$_GET['uptTest'];
-    $result = $wpdb->get_results("SELECT * FROM $table_name WHERE id='$upt_id' AND creator_id='$user_id'");
+    if(has_user_role('administrator')){
+      $result = $wpdb->get_results("SELECT * FROM $table_name WHERE id='$upt_id'");
+    }else{
+      $result = $wpdb->get_results("SELECT * FROM $table_name WHERE id='$upt_id' AND creator_id='$user_id'");
+    }
     foreach($result as $print) {
       $name = $print->name;
     }
@@ -86,7 +97,12 @@ if (isset($_GET['uptTest'])) {
   }
 
 //GET TESTS
+if(has_user_role('administrator')){
+  $result = $wpdb->get_results("SELECT * FROM $table_name WHERE 1 ORDER BY id DESC");
+}else{
   $result = $wpdb->get_results("SELECT * FROM $table_name WHERE creator_id='$user_id' ORDER BY id DESC");
+}
+  
   
 ?>
 
@@ -178,6 +194,7 @@ if (isset($_GET['uptTest'])) {
         ?>
         </tbody>
     </table>
+    
       </div>
       <script>
         jQuery(document).ready( function () {

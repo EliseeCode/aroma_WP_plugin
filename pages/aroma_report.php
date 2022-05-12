@@ -38,7 +38,7 @@ else{
 echo "<script>test_id=".json_encode($test_id).";</script>";
 //Check if user is allowed to see the test
 $checkIfExists = $wpdb->get_results("SELECT COUNT(*) FROM $test_table WHERE creator_id = $user_id AND id=$test_id");
-if ($checkIfExists == NULL) {
+if ($checkIfExists == NULL && !has_user_role('administrator')) {
     return "error";
 }
 
@@ -47,7 +47,8 @@ if ($checkIfExists == NULL) {
   $bottles = $wpdb->get_results("SELECT $bottles_table.id,
     $bottles_table.name,
     $bottles_table.color,
-    $pref_table.preference
+    $pref_table.preference,
+    $pref_table.position
     FROM $bottles_table 
     LEFT JOIN $pref_table 
     ON $pref_table.bottle_id=$bottles_table.id AND $pref_table.test_id=$test_id
@@ -101,7 +102,6 @@ foreach ($tests as $t){
     padding:5px 10px;
     border-radius:5px;
     color:white;
-    display:inline-block;
     margin:4px;
   }  
   .saved{border:2px lime solid;}
@@ -133,7 +133,15 @@ foreach ($tests as $t){
   </div> 
 
   <!-- TOP Oil -->
-  
+  <style>
+    .bottle:nth-child(1):before{content:"1";}
+    .bottle:nth-child(2):before{content:"2";}
+    .bottle:nth-child(3):before{content:"3";}
+    .bottle:nth-child(4):before{content:"4";}
+    .bottle{opacity:0.7;}
+    .bottle:nth-child(1), .bottle:nth-child(2),.bottle:nth-child(3), .bottle:nth-child(4){opacity:1;}
+    
+  </style>  
   <div class="card groupItem is-4 block" style="max-width:400px;">
     <header class='card-header'>
       <p class='card-header-title'>
@@ -142,11 +150,17 @@ foreach ($tests as $t){
     </header>
     <div class='card-content'>
       <div class='content'>
-        <div>
+        <div id='sortableTOP' style="overflow: auto;">
           <?php 
           forEach($bottles as $bottle){
-            if($bottle->preference==4)
-            echo "<div class='bottle' style='background-color:$bottle->color;'>$bottle->name</div>";
+            if($bottle->preference==4){
+            echo "<div class='bottle bottle_item_$bottle->id' data-position='$bottle->position' data-id='$bottle->id' style='background-color:$bottle->color;'><div class='icon'><i class='fas fa-heart'></i></div>$bottle->name</div>";
+            }
+          }
+          forEach($bottles as $bottle){
+          if($bottle->preference==1){
+            echo "<div class='bottle bottle_item_$bottle->id' data-position='$bottle->position' data-id='$bottle->id' style='background-color:$bottle->color;'><div class='icon'><i class='fas fa-skull-crossbones'></i></div>$bottle->name</div>";
+          }
           }
           ?>
         </div>
@@ -165,20 +179,20 @@ foreach ($tests as $t){
         <table class="table">
           <thead>
             <tr>
-              <th><div class="icon"><i class="fas fa-skull-crossbones"></div></th>
+              <!-- <th><div class="icon"><i class="fas fa-skull-crossbones"></div></th> -->
               <th><div class="icon"><i class="fas fa-minus"></div></th>
               <th><div class="icon"><i class="fas fa-meh"></div></th>
               <th><div class="icon"><i class="fas fa-plus"></div></th>
-              <th><div class="icon"><i class="fas fa-heart"></div></th>
+              <!-- <th><div class="icon"><i class="fas fa-heart"></div></th> -->
             </tr>
           </thead> 
           <tbody> 
             <tr>
-              <td id="percent_bottle_0">no data</td>
+              <!-- <td id="percent_bottle_0">no data</td> -->
               <td id="percent_bottle_1">no data</td>
               <td id="percent_bottle_2">no data</td>
               <td id="percent_bottle_3">no data</td>
-              <td id="percent_bottle_4">no data</td>
+              <!-- <td id="percent_bottle_4">no data</td> -->
             </tr>
           </tbody>    
         </table>
@@ -213,10 +227,11 @@ foreach ($tests as $t){
    );
   echo "<script>wpApiSettings=".json_encode($wpApiSettings).";</script>";
 ?>
+
   <script>
-    console.log(bottles,groups,tags);
     //Construction of the superDataObject
     var data={};
+    console.log(tags);
     for(let k in tags)
     {
       row=tags[k];
@@ -233,11 +248,11 @@ foreach ($tests as $t){
         {total:0,bottles:[]},
         {total:0,bottles:[]},
         {total:0,bottles:[]}];
-
+console.log("newBottleBefore",newBottleByPref,pref);
       newBottleByPref[pref]={...newBottleByPref[pref],
-        total:newBottleByPref[pref]?.total+1 || 1,
+        total:newBottleByPref[pref]?.total+1,
         bottles:[...newBottleByPref[pref]?.bottles,{bottle_name,bottle_id}]}
-
+console.log("newBottleAfter",newBottleByPref);
       data={...data,
         [group_id]:{...data[group_id],
           group_id,
@@ -251,6 +266,7 @@ foreach ($tests as $t){
             }
           }}
       }
+console.log("afterData",data)
     }
     console.log(data);
 
@@ -261,12 +277,9 @@ foreach ($tests as $t){
       },[0,0,0,0,0]);
       var totalNbreOfBottleByPref=nbreOfBottleByPref.reduce((acc,cur)=>acc+cur,0);
       console.log(nbreOfBottleByPref);
-      for(k=0;k<5;k++){
-        jQuery('#percent_bottle_'+k).text(`${Math.round(nbreOfBottleByPref[k]*100/totalNbreOfBottleByPref)}% (${nbreOfBottleByPref[k]})`);
-      }
-      
-    
-    
+      jQuery('#percent_bottle_1').text(`${Math.round((nbreOfBottleByPref[0]+nbreOfBottleByPref[1])*100/totalNbreOfBottleByPref)}% (${(nbreOfBottleByPref[0]+nbreOfBottleByPref[1])})`);
+      jQuery('#percent_bottle_2').text(`${Math.round(nbreOfBottleByPref[2]*100/totalNbreOfBottleByPref)}% (${nbreOfBottleByPref[2]})`);
+      jQuery('#percent_bottle_3').text(`${Math.round((nbreOfBottleByPref[3]+nbreOfBottleByPref[4])*100/totalNbreOfBottleByPref)}% (${(nbreOfBottleByPref[3]+nbreOfBottleByPref[4])})`);
 
     //CHARTS
     const COLORS = [
@@ -280,15 +293,17 @@ foreach ($tests as $t){
   '#58595b',
   '#8549ba'
   ];
-    const COLORS_SHAKRA = [
-  '#e3424a',
-  '#eb7f2d',
-  '#f5e42f',
-  '#32c241',
-  '#3294c2',
+  
+  const COLORS_SHAKRA = [
+  '#7d35b0',
   '#3a2dad',
-  '#7d35b0'
+  '#3294c2',
+  '#32c241',
+  '#f5e42f',
+  '#eb7f2d',
+  '#e3424a',
   ];
+
     configGroup=[];
     dataSet=[];
     //config group_1
@@ -302,13 +317,56 @@ foreach ($tests as $t){
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
         data: Object.values(data[group_id].tagById).map((t)=>{
-          console.log(t.bottleByPref[3].total,t.bottleByPref[4].total,t.nberOfBottles);
-          //To start from somewhere else than origin
-          //return [10,(t.bottleByPref[3].total+t.bottleByPref[4].total)*100/t.nberOfBottles];
-          return (t.bottleByPref[3].total+t.bottleByPref[4].total)*100/t.nberOfBottles;
+          posValue=Math.floor((t.bottleByPref[3].total+t.bottleByPref[4].total)*100/t.nberOfBottles);
+          return posValue;
         }),
-      }]
+        datalabels: {
+          align: 'start',
+          anchor: 'end'
+        }
+      }
+      ]
     };
+
+    if(group_id==2)
+    {
+      dataSet[group_id].datasets.push(
+      {
+          label: data[group_id].group_name,
+          backgroundColor: 'rgb(80, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: Object.values(data[group_id].tagById).map((t)=>{
+            negValue=Math.floor(-(t.bottleByPref[0].total+t.bottleByPref[1].total)*100/t.nberOfBottles);
+            return negValue;
+          }),
+          datalabels: {
+            align: 'end',
+            anchor: 'start'
+          }
+      });
+    }
+
+
+    var pluginConfig={
+          legend:{display:false},
+          datalabels: {
+            color: 'white',
+            display: function(context) {
+              return Math.abs(context.dataset.data[context.dataIndex]) > 15;
+            },
+            font: {
+              weight: 'bold'
+            },
+            formatter: function(value, context) {
+              if(value.length>1){
+              return Math.round(value[1]) + '%';
+              }
+              else{
+              return Math.round(value) + '%';
+              }
+            }
+          }
+        };
 
     configGroup[group_id]={type: 'bar',
       data: dataSet[group_id],
@@ -320,27 +378,43 @@ foreach ($tests as $t){
           }
         },
         responsive: true,
-        plugins:{
-          legend:{display:false}
-        },
+        plugins:
+          {...pluginConfig}
+        ,
         scales: {
-        x: {
-          min: 0,
+          x: {
+          stacked:true,  
+          min: -100,
           max: 100,
+          },
+          y:{
+            stacked:true,
+          }
         }
-     }
       }
     }
   }
+  
+  configGroup[1].options.scales.x.min=0;
+  configGroup[3].options.scales.x.min=0;
+  configGroup[4].options.scales.x.min=0;
+  configGroup[5].options.scales.x.min=0;
+  
+  
   //OverWrite DataSet and conf
   dataSet[3].datasets[0].backgroundColor= COLORS_SHAKRA;
   dataSet[3].datasets[0].borderColor= 'rgb(255, 255, 255)';
+  dataSet[3].datasets[0].data=dataSet[3].datasets[0].data.reduce((acc,cur)=>{acc.unshift(cur);return acc;},[]);
+  dataSet[3].labels=dataSet[3].labels.reduce((acc,cur)=>{acc.unshift(cur);return acc;},[]);
+
   //Nata
   configGroup[6].type='pie';
   configGroup[6].options.plugins.legend.display=true;
   dataSet[6].datasets[0].backgroundColor= COLORS;
   dataSet[6].datasets[0].borderColor= 'rgb(255, 255, 255)';
+  //Group
 
+  Chart.register(ChartDataLabels);
   for(let g in groups)
   {
   var group_id=groups[g].id;
@@ -379,6 +453,39 @@ foreach ($tests as $t){
   }
   
 
+
+ 
+  function getListOrder(tObj) {
+    var list = jQuery(tObj).sortable("toArray");
+    return list.toString();
+  }
+  
+  
+  jQuery( function() {
+    jQuery( "#sortableTOP > .bottle" ).sort(function(a, b) {
+      //console.log(a,a.getAttribute('data-position'));
+        return parseInt(a.getAttribute('data-position')) - parseInt(b.getAttribute('data-position'));
+    }).appendTo(jQuery( "#sortableTOP" ));
+
+    jQuery( "#sortableTOP" ).sortable({ 
+    axis: "y",
+    update: function(event, ui) {
+      var positions = jQuery("#sortableTOP").sortable('toArray',{attribute: 'data-id'}).toString();
+
+      jQuery.ajax({
+              url: wpApiSettings.root + 'aroma/v1/setPositions/',
+              method: 'POST',
+              data:{test_id:test_id, positions: positions},
+              beforeSend: function (xhr) {
+                  xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
+              }
+          }).done(function (response) {
+              console.log(response);
+          });
+    }
+  });
+  
+  });
  
 
 
