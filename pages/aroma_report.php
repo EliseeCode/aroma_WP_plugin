@@ -158,7 +158,7 @@ foreach ($tests as $t){
             }
           }
           forEach($bottles as $bottle){
-          if($bottle->preference==1){
+          if($bottle->preference!=null && $bottle->preference==0){
             echo "<div class='bottle bottle_item_$bottle->id' data-position='$bottle->position' data-id='$bottle->id' style='background-color:$bottle->color;'><div class='icon'><i class='fas fa-skull-crossbones'></i></div>$bottle->name</div>";
           }
           }

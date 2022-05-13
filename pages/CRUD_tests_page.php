@@ -147,16 +147,21 @@ if(has_user_role('administrator')){
                 <th >Date</th>
                 <th >Name</th>
                 <th >Comment</th>
+                <th >Aroma Psychologist</th>
                 <th >Links</th>
                 <th >Actions</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach ($result as $print) {
+          //$creator=get_user_meta( $print->creator_id );
+          //print_r($creator);
+          $creatorName=get_user_meta( $print->creator_id, 'nickname', true );
         echo "<tr>
                 <td style='box-sizing: inherit;'>$print->time</td>
                 <td style='box-sizing: inherit;'>$print->name</td>
                 <td style='box-sizing: inherit;'>$print->comment</td>
+                <td style='box-sizing: inherit;'>$creatorName</td>
                 <td style='box-sizing: inherit;'>
                     
                     <a href='/index.php/aroma-answers?test_id=$print->id'>
