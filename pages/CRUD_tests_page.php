@@ -15,7 +15,7 @@
 </head>
 <body class="cleanpage">
 <div class="wrap container">
-  <h1 class="title">Tests</h1>
+  <h1 class="title">Aroma testai</h1>
 <?php 
 global $wpdb;
 $table_name = $wpdb->prefix . 'aroma_tests';
@@ -67,7 +67,7 @@ if (isset($_GET['uptTest'])) {
     
     <div class='card block'>
       <div class='card-header'>
-        <div class='card-header-title'>Edit test</div>
+        <div class='card-header-title'>Redaguoti aroma testai</div>
       </div>
       <div class='card-content'>
         <form action='".$page_uri."' method='post'>
@@ -84,10 +84,14 @@ if (isset($_GET['uptTest'])) {
           </div>  
           <div class='field has-addons'>  
               <div class='control'>
-                <button class='button is-primary' id='uptsubmit' name='uptsubmitTest' type='submit'>Save</button>
+                <button class='button is-primary' id='uptsubmit' name='uptsubmitTest' type='submit'>
+                sutaupyti
+                </button>
               </div>
               <div class='control'>
-                <a href='".$page_uri."'><button class='button' type='button'>Cancel</button></a>
+                <a href='".$page_uri."'><button class='button' type='button'>
+                atšaukti
+                </button></a>
               </div>
           </div>
         </form>
@@ -111,25 +115,25 @@ if(has_user_role('administrator')){
       <form action="" method="post">
         <div class="card block">
           <div class="card-header">
-            <div class="card-header-title">New test</div>
+            <div class="card-header-title">Naujas testas</div>
           </div>
           <div class='card-content'>
             <div class="field ">
                 <div class="control">
-                  <input class="input" type="text" id="newname" name="newname" placeholder="person's name">
+                  <input class="input" type="text" id="newname" name="newname" placeholder="kliento vardas">
                 </div>
             </div>
             <div class="field ">
                 <div class="control">
-                  <textarea class="textarea" id="newcomment" name="newcomment" placeholder="Comment"></textarea>
+                  <textarea class="textarea" id="newcomment" name="newcomment" placeholder="komentaras"></textarea>
                 </div>
             </div>
             <div class="field has-addons">
                 <div class="control">
-                  <button class="button is-primary" id="newsubmit" name="newsubmitTest" type="submit">New</button>
+                  <button class="button is-primary" id="newsubmit" name="newsubmitTest" type="submit">Naujas testas</button>
                 </div>
                 <div class="control">
-                <a href='".$page_uri."'><button class='button' type='button'>Cancel</button></a>
+                <a href='".$page_uri."'><button class='button' type='button'>atšaukti</button></a>
                 </div>
             </div>
           </div>  
@@ -139,17 +143,16 @@ if(has_user_role('administrator')){
     <?php } ?>
     <div class="box block">
     <form action="" method="GET">
-      <button class="button is-primary m-3 is-pulled-right" name="newtest">New</button>
+      <button class="button is-primary m-3 is-pulled-right" name="newtest">Naujas testas</button>
     </form>  
     <table id="testsTable" class="table wp-list-table striped">
         <thead>
             <tr>
-                <th >Date</th>
-                <th >Name</th>
-                <th >Comment</th>
-                <th >Aroma Psychologist</th>
-                <th >Links</th>
-                <th >Actions</th>
+                <th >Data</th>
+                <th >Kliento vardas</th>
+                <th colspan=2>Aroma Psychologist</th>
+                <th >Testas</th>
+                <th >Veiksmai</th>
             </tr>
         </thead>
         <tbody>
@@ -157,24 +160,26 @@ if(has_user_role('administrator')){
           //$creator=get_user_meta( $print->creator_id );
           //print_r($creator);
           $creatorName=get_user_meta( $print->creator_id, 'nickname', true );
+          $creatorFirstName=get_user_meta( $print->creator_id, 'firstname', true );
+          $creatorLastName=get_user_meta( $print->creator_id, 'lastname', true );
         echo "<tr>
                 <td style='box-sizing: inherit;'>$print->time</td>
                 <td style='box-sizing: inherit;'>$print->name</td>
-                <td style='box-sizing: inherit;'>$print->comment</td>
-                <td style='box-sizing: inherit;'>$creatorName</td>
+                <td style='box-sizing: inherit;'>$creatorFistName</td>
+                <td style='box-sizing: inherit;'>$creatorLastName</td>
                 <td style='box-sizing: inherit;'>
                     
                     <a href='/index.php/aroma-answers?test_id=$print->id'>
                       <button class='m-1 button is-primary icon-text' type='button'>
                       <div class='icon'><i class='fas fa-edit'></i></div>
-                        <span>Fill in</span>
+                        <span>Pildyti</span>
                       </button>
                     </a> 
 
                     <a href='/index.php/aroma-report?test_id=$print->id' class='mr-3'>
                         <button class='m-1 button is-primary icon-text' type='button'>
                           <div class='icon'><i class='fas fa-chart-pie'></i></div>
-                          <span>Report</span>
+                          <span>Analizė</span>
                         </button>
                     </a> 
                 </td>
@@ -182,14 +187,14 @@ if(has_user_role('administrator')){
                     <a href='".$page_uri."?uptTest=$print->id'>
                       <button class='m-1 button is-warning icon-text' type='button'>
                       <div class='icon'><i class='fas fa-edit'></i></div>
-                        <span>Edit</span>
+                        <span>Redaguoti</span>
                       </button>
                     </a> 
 
                     <a href='".$page_uri."?delTest=$print->id'>
                       <button class='m-1 button is-danger icon-text' type='button'>
                         <div class='icon'><i class='fas fa-trash'></i></div>
-                        <span>Delete</span>
+                        <span>Naikinti</span>
                       </button>
                     </a>
 

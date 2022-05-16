@@ -5,7 +5,7 @@
 */
 function addAdminPageContent(){
     	        add_menu_page(
-                    'Aroma bottle',
+                    'AromaPsichologia',
                     'Aroma Plugin',
                     'manage_options',
                     'aromaSetting',
@@ -19,8 +19,8 @@ add_action('admin_menu', 'addAdminPageContent');
 function addAdminSubPageGroupContent(){
     add_submenu_page(
         'aromaSetting',
-        'Aroma groups',
-        'Aroma groups',
+        'Groups',
+        'Groups',
         'manage_options',
         'aromaGroupSetting',
         'aromaGroupPage',
@@ -32,8 +32,8 @@ add_action('admin_menu', 'addAdminSubPageGroupContent');
 function addAdminSubPageTagContent(){
     add_submenu_page(
         'aromaSetting',
-        'Aroma tags',
-        'Aroma tags',
+        'Tags',
+        'Tags',
         'manage_options',
         'aromaTagSetting',
         'aromaTagPage',
@@ -86,8 +86,8 @@ register_activation_hook( AROMA_FILE, 'tables_install' );
 register_activation_hook( AROMA_FILE, 'tables_install_data' );
 
 //Uninstall
-register_deactivation_hook( AROMA_FILE, 'tables_delete' );
+//register_deactivation_hook( AROMA_FILE, 'tables_delete' );
 //ON delete
-// if( defined( 'WP_UNINSTALL_PLUGIN' ) ){
-//     tables_delete();
-// }
+ if( defined( 'WP_UNINSTALL_PLUGIN' ) ){
+     tables_delete();
+ }

@@ -31,7 +31,7 @@ if(isset($_GET["test_id"])){
   $test_id=$_GET["test_id"];
 }
 else{
-  echo "pas de test_id ;(";
+  echo "no test_id ;(";
   return;
 }
 //Check if user is allowed to see the test
@@ -81,14 +81,14 @@ $tests = $wpdb->get_results("SELECT *
     <div class="level">
       <div class="level-left">
         <div class="level-item">
-      Bottles
+      Eteriniai aliejai
       </div>
       </div>
       <div class="level-right">
         <div class="level-item">
           <a href="/index.php/aroma-report?test_id=<?php echo $test_id;?>" class="icon-text button is-primary">
             <span class="icon"><i class="fas fa-chart-pie"></i></span>
-            <span>Report</span>
+            <span>Analizė</span>
           </a>
         </div>
       </div>
@@ -103,7 +103,7 @@ $tests = $wpdb->get_results("SELECT *
     </p>
   </div>
   <p class="panel-tabs filterContainer">
-    <a class="is-active pref_all prefButton" onclick='toogleFilter(-1)'>All</a>
+    <a class="is-active pref_all prefButton" onclick='toogleFilter(-1)'>Visi</a>
         <a class='pref_0 prefButton' data-val=0 onclick='toogleFilter(0)'><span class='icon'><span class='fas fa-skull-crossbones'></span></span></a>
         <a class='pref_1 prefButton' data-val=1 onclick='toogleFilter(1)'><span class='icon'><span class='fas fa-minus'></span></span></a>
         <a class='pref_2 prefButton' data-val=2 onclick='toogleFilter(2)'><span class='icon'><span class='fas fa-meh'></span></span></a>
@@ -134,7 +134,7 @@ $tests = $wpdb->get_results("SELECT *
 
   <div class="panel-block">
     <button onclick='toogleFilter(-1)' class="button is-outlined is-fullwidth">
-      Reset all filters
+    Pašalinti pasirinkimus
     </button>
   </div>
 </nav>

@@ -68,7 +68,7 @@ if (isset($_GET['upt'])) {
     $allGroups = $wpdb->get_results("SELECT * FROM $groups_table");
     
     echo "<div class='wrap'>
-    <h2>Update Bottles</h2>
+    <h2>Update essential oil</h2>
     <table class='wp-list-table table striped' style='display:inline-block;'>
       <thead>
         <tr>
@@ -121,10 +121,10 @@ if (isset($_GET['upt'])) {
 ?>
 
 
-    <h1>Aroma bottle</h1>
+    <h1>Essential oils</h1>
 <?php if(isset($_POST['newBottle'])){?>
   <div>
-    <h2>Create new bottle</h2>
+    <h2>Create new E.O.</h2>
     <form action="" method="post">
         <table class="table" style="display:inline-block;">
           <tr>
@@ -140,16 +140,16 @@ if (isset($_GET['upt'])) {
 </div>  
 <?php } ?>    
     <hr>
-    <h2>Existing bottles</h2>
+    <h2>Existing essential oils</h2>
     <div class="block">
       <form action="" method="POST">
-        <button class="button is-primary block" name="newBottle">New bottle</button>
+        <button class="button is-primary block" name="newBottle">New</button>
       </form>
     </div>
     <table id="bottleTable" class="wp-list-table striped table" style="">
         <thead>
             <tr>
-                <th >Bottle ID</th>
+                <th >E.O. ID</th>
                 <th >Color</th>
                 <th >Name</th>
                 <th width="40%">tags</th>

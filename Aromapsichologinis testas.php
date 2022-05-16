@@ -1,9 +1,9 @@
 <?php
 /**
- * @package eliseeAromaPlugin
+ * @package AromaPsichologia
  */
 /*
-Plugin Name: eliseeAroma plugin
+Plugin Name: AromaPsichologia
 Description: plugin to make Aroma test
 Version: 1.0.0
 */

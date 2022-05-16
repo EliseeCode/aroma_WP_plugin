@@ -126,7 +126,7 @@ foreach ($tests as $t){
     </div>
     <div class="level-item field">
       <div class='control'>
-        <label>Comment</label>
+        <label>Užklausa</label>
         <textarea id='uptcomment' oninput="updateTestComment();" class="textarea"><?php echo "$test->comment";?></textarea>
       </div>
     </div>
