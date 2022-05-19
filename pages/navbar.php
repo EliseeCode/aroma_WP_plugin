@@ -2,7 +2,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a href="?page=aromaSetting" class="navbar-item is-active">
-        bottles
+        Essential oil
       </a>
 
       <a href="?page=aromaTagSetting" class="navbar-item">

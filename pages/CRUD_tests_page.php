@@ -150,7 +150,7 @@ if(has_user_role('administrator')){
             <tr>
                 <th >Data</th>
                 <th >Kliento vardas</th>
-                <th colspan=2>Aroma Psychologist</th>
+                <th colspan=2>Testą atliko</th>
                 <th >Testas</th>
                 <th >Veiksmai</th>
             </tr>
@@ -160,12 +160,12 @@ if(has_user_role('administrator')){
           //$creator=get_user_meta( $print->creator_id );
           //print_r($creator);
           $creatorName=get_user_meta( $print->creator_id, 'nickname', true );
-          $creatorFirstName=get_user_meta( $print->creator_id, 'firstname', true );
-          $creatorLastName=get_user_meta( $print->creator_id, 'lastname', true );
+          $creatorFirstName=get_user_meta( $print->creator_id, 'first_name', true );
+          $creatorLastName=get_user_meta( $print->creator_id, 'last_name', true );
         echo "<tr>
                 <td style='box-sizing: inherit;'>$print->time</td>
                 <td style='box-sizing: inherit;'>$print->name</td>
-                <td style='box-sizing: inherit;'>$creatorFistName</td>
+                <td style='box-sizing: inherit;'>$creatorFirstName</td>
                 <td style='box-sizing: inherit;'>$creatorLastName</td>
                 <td style='box-sizing: inherit;'>
                     

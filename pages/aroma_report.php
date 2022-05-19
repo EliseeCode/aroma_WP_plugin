@@ -78,7 +78,7 @@ if ($checkIfExists == NULL && !has_user_role('administrator')) {
     JOIN $groups_table ON $group_tag_table.group_id=$groups_table.id
     JOIN $pref_table ON $bottles_table.id=$pref_table.bottle_id AND $pref_table.test_id=$test_id
     WHERE 1
-    ORDER BY $groups_table.id,$tags_table.id DESC");
+    ORDER BY $groups_table.id ASC,$tags_table.id ASC");
   echo "<script>tags=".json_encode($tags).";</script>";  
 
   //GET test

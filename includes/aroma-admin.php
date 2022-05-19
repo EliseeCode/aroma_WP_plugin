@@ -6,7 +6,7 @@
 function addAdminPageContent(){
     	        add_menu_page(
                     'AromaPsichologia',
-                    'Aroma Plugin',
+                    'AromaPsichologia',
                     'manage_options',
                     'aromaSetting',
                     'aromaAdminPage',
@@ -26,10 +26,6 @@ function addAdminSubPageGroupContent(){
         'aromaGroupPage',
         100
     );
-}
-add_action('admin_menu', 'addAdminSubPageGroupContent');
-
-function addAdminSubPageTagContent(){
     add_submenu_page(
         'aromaSetting',
         'Tags',
@@ -39,11 +35,28 @@ function addAdminSubPageTagContent(){
         'aromaTagPage',
         100
     );
+    add_submenu_page(
+        'aromaSetting',
+        'DBAdmin',
+        'DBAdmin',
+        'manage_options',
+        'aromaDBSetting',
+        'aromaDBPage',
+        50
+    );
 }
-add_action('admin_menu', 'addAdminSubPageTagContent');
+add_action('admin_menu', 'addAdminSubPageGroupContent');
+
+
 /*
 *add admin content page
 */
+function aromaDBPage(){
+    if(!current_user_can('manage_options')){
+        return;
+    }
+    include(AROMA_PATH.'pages/DBadmin.php');
+}
 function aromaAdminPage(){
     if(!current_user_can('manage_options')){
         return;

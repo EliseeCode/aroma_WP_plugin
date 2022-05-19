@@ -1,6 +1,5 @@
 <?php
 require(AROMA_PATH.'pages/navbar.php');
-
 global $wpdb;
 $user_id=get_current_user_id();
 $table_name = $wpdb->prefix . 'aroma_bottles';
@@ -209,7 +208,10 @@ if (isset($_GET['upt'])) {
         
       }
       
-      jQuery('#bottleTable').DataTable();
+      jQuery('#bottleTable').DataTable({
+        order: [[2, 'asc']],
+        "pageLength": 100
+    });
 } );
    </script>  
 </div>

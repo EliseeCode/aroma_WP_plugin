@@ -53,7 +53,7 @@ $tests = $wpdb->get_results("SELECT *
     LEFT JOIN $pref_table_name 
     ON $pref_table_name.bottle_id=$bottle_table_name.id AND $pref_table_name.test_id=$test_id
     WHERE 1
-    ORDER BY $bottle_table_name.id DESC");
+    ORDER BY $bottle_table_name.name ASC");
   echo "<script>bottles=".json_encode($bottles).";</script>";  
 ?>
 
@@ -96,7 +96,7 @@ $tests = $wpdb->get_results("SELECT *
   </div>
   <div class="panel-block">
     <p class="control has-icons-left">
-      <input oninput="filterBottlesByName()" id="bottleNameInput" class="input" type="text" placeholder="Search">
+      <input oninput="filterBottlesByName()" id="bottleNameInput" class="input" type="text" placeholder="Paieška">
       <span class="icon is-left">
         <i class="fas fa-search" aria-hidden="true"></i>
       </span>
