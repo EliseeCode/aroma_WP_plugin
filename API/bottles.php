@@ -73,6 +73,7 @@ function setPositions( WP_REST_Request $request ) {
 }
 
 
+
 function setComment( WP_REST_Request $request ) {
     global $wpdb;
     $user_id=get_current_user_id();

@@ -18,7 +18,7 @@ if (isset($_POST['newsubmit'])) {
     $user_id=get_current_user_id();
     // $email = $_POST['newemail'];
     // $wpdb->query("INSERT INTO $table_name(name,email) VALUES('$name','$email')");
-     $wpdb->query("INSERT INTO $table_name(name,color,creator_id) VALUES('$name','$color',$user_id)");
+     $wpdb->query("INSERT INTO $table_name(time,name,color,creator_id) VALUES(NOW(),'$name','$color',$user_id)");
     
     echo "<script>location.replace('admin.php?page=aromaSetting');</script>";
   }
@@ -111,10 +111,10 @@ if (isset($_GET['upt'])) {
   }
 
   $result = $wpdb->get_results("SELECT $table_name.id as id, $table_name.name as name, $table_name.color as color, GROUP_CONCAT(CONCAT($groups_table.name,' : ',$tags_table.name)) as tags FROM $table_name 
-  JOIN $bottle_tag_table ON $table_name.id=$bottle_tag_table.bottle_id
-  JOIN $tags_table ON $bottle_tag_table.tag_id=$tags_table.id
-  JOIN $group_tag_table ON $group_tag_table.tag_id=$tags_table.id
-  JOIN $groups_table ON $groups_table.id=$group_tag_table.group_id
+  LEFT JOIN $bottle_tag_table ON $table_name.id=$bottle_tag_table.bottle_id
+  LEFT JOIN $tags_table ON $bottle_tag_table.tag_id=$tags_table.id
+  LEFT JOIN $group_tag_table ON $group_tag_table.tag_id=$tags_table.id
+  LEFT JOIN $groups_table ON $groups_table.id=$group_tag_table.group_id
   GROUP BY $table_name.id");
   echo "<script>bottles=".json_encode($result).";</script>";  
 ?>

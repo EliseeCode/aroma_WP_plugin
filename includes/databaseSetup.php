@@ -132,6 +132,7 @@ function tables_install() {
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
 		time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 		name tinytext NOT NULL,
+		position INTEGER DEFAULT 0,
 		creator_id mediumint(9),
 		PRIMARY KEY  (id)
 	) $charset_collate;";

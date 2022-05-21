@@ -12,7 +12,8 @@ $user_id=get_current_user_id();
 if (isset($_POST['newsubmitTag'])) {
     $name = $_POST['newname'];
     $group_id = $_POST['newgroup'];
-    $wpdb->query("INSERT INTO $tag_table_name(time, name,creator_id) VALUES(NOW(),'$name',$user_id)");
+    $position = (int)$_POST['newposition'];
+    $wpdb->query("INSERT INTO $tag_table_name(time, name,position,creator_id) VALUES(NOW(),'$name',$position,$user_id)");
     $tag_id = $wpdb->insert_id;
     $wpdb->query("INSERT INTO $group_tag_table_name(tag_id, group_id,creator_id) VALUES($tag_id,$group_id,$user_id)");
     
@@ -28,11 +29,12 @@ if (isset($_GET['delTag'])) {
   }  
 //UPDATE
 if (isset($_POST['uptsubmitTag'])) {
-    $tag_id = $_POST['uptid'];
+    $tag_id = (int)$_POST['uptid'];
     $name = $_POST['uptname'];
-    $group_id = $_POST['uptgroup'];
-    $wpdb->query("UPDATE $tag_table_name SET name='$name' WHERE id='$tag_id' AND creator_id='$user_id'");
-    $wpdb->query("UPDATE $group_tag_table_name SET group_id=$group_id WHERE tag_id='$tag_id' AND creator_id='$user_id'");
+    $position =(int)$_POST['uptpos'];
+    $group_id = (int)$_POST['uptgroup'];
+    $wpdb->query("UPDATE $tag_table_name SET name='$name', position=$position WHERE id='$tag_id'");
+    $wpdb->query("UPDATE $group_tag_table_name SET group_id=$group_id WHERE tag_id='$tag_id'");
     
     echo "<script>location.replace('".$page_uri."');</script>";
   }
@@ -42,6 +44,7 @@ if (isset($_GET['uptTag'])) {
 
     $result = $wpdb->get_results("SELECT $group_table_name.name as group_name ,
       $tag_table_name.name as tag_name ,
+      $tag_table_name.position as tag_position ,
       $group_table_name.id as group_id ,
       $tag_table_name.id as tag_id
       FROM $tag_table_name 
@@ -52,6 +55,7 @@ if (isset($_GET['uptTag'])) {
     foreach($result as $print) {
       $tag_name = $print->tag_name;
       $tag_id = $print->tag_id;
+      $tag_position = $print->tag_position;
       $group_name = $print->group_name;
       $group_id = $print->group_id;
     }
@@ -64,6 +68,7 @@ if (isset($_GET['uptTag'])) {
       <thead>
         <tr>
           <th >Tag Id</th>
+          <th >priority</th>
           <th >TagName</th>
           <th >Group</th>
           <th >Actions</th>
@@ -73,6 +78,7 @@ if (isset($_GET['uptTag'])) {
         <form action='".$page_uri."' method='post'>
           <tr>
             <td >$tag_id<input type='hidden' id='uptid' name='uptid' value='$tag_id'></td>
+            <td ><input class='input' type='number' id='uptpos' name='uptpos' value='$tag_position'></td>
             <td ><input class='input' type='text' id='uptname' name='uptname' value='$tag_name'></td>
             <td><div class='select'><select name='uptgroup'>";
             foreach ($resultGroup as $print) {
@@ -95,6 +101,7 @@ if (isset($_GET['uptTag'])) {
 //GET TagS
   $resultTag = $wpdb->get_results("SELECT $group_table_name.name as group_name ,
     $tag_table_name.name as tag_name ,
+    $tag_table_name.position as tag_position ,
     $group_table_name.id as group_id ,
     $tag_table_name.id as tag_id
     FROM $tag_table_name 
@@ -111,6 +118,7 @@ if (isset($_GET['uptTag'])) {
     <h2>New Tag</h2>
     <form action="" method="post">
         <tr>
+            <td><input type="number" id="newposition" name="newposition" placeholder="Tag's priority"></td>
             <td><input type="text" id="newname" name="newname" placeholder="Tag's name"></td>
             <td><select name="newgroup">
             <?php foreach ($resultGroup as $print) {
@@ -126,6 +134,7 @@ if (isset($_GET['uptTag'])) {
         <thead>
             <tr>
                 <th >Tag ID</th>
+                <th>Priority</th>
                 <th>Name</th>
                 <th >Group</th>
                 <th >Actions</th>
@@ -135,6 +144,7 @@ if (isset($_GET['uptTag'])) {
         <?php foreach ($resultTag as $print) {
         echo "<tr>
                 <td >$print->tag_id</td>
+                <td >$print->tag_position</td>
                 <td >$print->tag_name</td>
                 <td >$print->group_name</td>
                 <td >

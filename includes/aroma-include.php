@@ -6,3 +6,13 @@ function has_user_role($check_role){
     }
     return false;
 }
+
+function setTagPositions( $position, $tag_id) {
+    global $wpdb;
+    $pos=(int)$position;
+    $tag_id=(int)$tag_id;
+    //Update positions
+    $table_name = $wpdb->prefix . 'aroma_tags';
+    $wpdb->query("UPDATE $table_name SET position=$pos WHERE tag_id=$tag_id");
+  return "success";
+  }

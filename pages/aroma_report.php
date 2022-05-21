@@ -68,6 +68,7 @@ if ($checkIfExists == NULL && !has_user_role('administrator')) {
       $bottles_table.color as bottle_color,
       $tags_table.id as tag_id,
       $tags_table.name as tag_name,
+      $tags_table.position as tag_position,
       $groups_table.id as group_id,
       $groups_table.name as group_name,
       $pref_table.preference as pref
@@ -78,7 +79,7 @@ if ($checkIfExists == NULL && !has_user_role('administrator')) {
     JOIN $groups_table ON $group_tag_table.group_id=$groups_table.id
     JOIN $pref_table ON $bottles_table.id=$pref_table.bottle_id AND $pref_table.test_id=$test_id
     WHERE 1
-    ORDER BY $groups_table.id ASC,$tags_table.id ASC");
+    ORDER BY $groups_table.id ASC, $tags_table.position ASC");
   echo "<script>tags=".json_encode($tags).";</script>";  
 
   //GET test
@@ -239,6 +240,7 @@ foreach ($tests as $t){
       group_name=row.group_name;
       tag_id=row.tag_id;
       tag_name=row.tag_name;
+      tag_position=row.tag_position;
       bottle_id=row.bottle_id;
       bottle_name=row.bottle_name;
       pref=row.pref;
@@ -248,11 +250,11 @@ foreach ($tests as $t){
         {total:0,bottles:[]},
         {total:0,bottles:[]},
         {total:0,bottles:[]}];
-console.log("newBottleBefore",newBottleByPref,pref);
+
       newBottleByPref[pref]={...newBottleByPref[pref],
         total:newBottleByPref[pref]?.total+1,
         bottles:[...newBottleByPref[pref]?.bottles,{bottle_name,bottle_id}]}
-console.log("newBottleAfter",newBottleByPref);
+
       data={...data,
         [group_id]:{...data[group_id],
           group_id,
@@ -261,11 +263,13 @@ console.log("newBottleAfter",newBottleByPref);
             [tag_id]:{...data[group_id]?.tagById[tag_id],
               tag_id,
               tag_name,
+              tag_position,
               bottleByPref:newBottleByPref,
               nberOfBottles:newBottleByPref.reduce((acc,cur)=>{return acc+cur.total},0)
             }
           }}
       }
+      
 console.log("afterData",data)
     }
     console.log(data);
@@ -309,14 +313,20 @@ console.log("afterData",data)
     //config group_1
     for(let g in groups)
     {
+
     var group_id=groups[g].id;
+    
     dataSet[group_id] = {
-      labels: Object.values(data[group_id].tagById).map((t)=>{return t.tag_name}),
+      labels: Object.values(data[group_id].tagById)
+        .sort((a,b)=>{return a.tag_position-b.tag_position;})
+        .map((t)=>{return t.tag_name}),
       datasets: [{
         label: data[group_id].group_name,
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: Object.values(data[group_id].tagById).map((t)=>{
+        data: Object.values(data[group_id].tagById)
+          .sort((a,b)=>{return a.tag_position-b.tag_position;})
+          .map((t)=>{
           posValue=Math.floor((t.bottleByPref[3].total+t.bottleByPref[4].total)*100/t.nberOfBottles);
           return posValue;
         }),
