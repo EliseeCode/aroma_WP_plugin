@@ -29,6 +29,11 @@ if (isset($_GET['del'])) {
     
     echo "<script>location.replace('admin.php?page=aromaSetting');</script>";
   }  
+if (isset($_POST['uptAllColor'])) {
+    $color = $_POST['allColor'];
+    $wpdb->query("UPDATE $table_name SET color='$color' WHERE 1");
+    echo "<script>location.replace('admin.php?page=aromaSetting');</script>";
+  }  
 //UPDATE
 if (isset($_POST['uptsubmit'])) {
     $id = $_POST['uptid'];
@@ -177,6 +182,14 @@ if (isset($_GET['upt'])) {
         ?>
         </tbody>
     </table>
+
+    <div class="box">
+      <h2 class="subtitle">Change all E.O. color</h2>
+      <form action="" method="POST">
+        <input type="color" name="allColor">
+        <button name="uptAllColor">Update all color</button>
+      </form>
+    </div>
    <script>
      jQuery(document).ready( function () {
       
@@ -185,7 +198,13 @@ if (isset($_GET['upt'])) {
         bottle=bottles[k];
         bottle_id=bottle.id;
         tagsRow=bottle.tags;
+        console.log(tagsRow);
+        if(tagsRow!=null){
         groupTagArray=tagsRow.split(',');
+        }
+        else{
+          groupTagArray=[];
+        }
         tagsHTML="";
         dataTag={};
         for(let t in groupTagArray)
